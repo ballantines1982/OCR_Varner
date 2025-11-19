@@ -1,0 +1,456 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckPythonScriptVersion" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umsm="clr-namespace:UiPath.MicrosoftOffice365.Sharepoint.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_dict_ParameterDict" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>887,4600</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.FTP</x:String>
+      <x:String>UiPath.FTP.Enums</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>Microsoft.CodeAnalysis.CSharp</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Contracts.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>CF50301268D_Attachme.hOvsb4SXR3I10WsQY3nCqi64</AssemblyReference>
+      <AssemblyReference>CF50301268D_EmailMes.Bqxr82yXCIR1khTre3HSRGL3</AssemblyReference>
+      <AssemblyReference>CF50301268D_Case_Lis.vs9p83IyqVC1eWDS81Lf6Gc3</AssemblyReference>
+      <AssemblyReference>CF50301268D_EmailMes.ESVYe3fqFTS12Mx2crah4q3</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>CF50301268D_Case_Ret.YjyV31nDvRQ1J53v42GCHcT2</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>C982043C0A4_EmailMes.tNOBm3Ow8ZE1UkKEj3Eadc5</AssemblyReference>
+      <AssemblyReference>C982043C0A4_EmailMes.7Gjh132aOMG1qZQaG2emDm93</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Tri.HEdX32pPoBQ19wrhoQ00Kc3</AssemblyReference>
+      <AssemblyReference>C1229BCFE39_EmailMes.3Wgna4qZ7iD1HwVIz2TG6Pt1</AssemblyReference>
+      <AssemblyReference>C1229BCFE39_Case_Ret.OqQQa4qrNNE1Eg7BE11yufe</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Ret.0cZBS4BzR2M15sqcH1wh5vW1</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.FTP</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+      <AssemblyReference>C0F87782713_normalis.QNVF813cOdD1eACOU3rXo9X</AssemblyReference>
+      <AssemblyReference>C0F87782713_individu.kjCYjvgiiE1R18fedrtxU3</AssemblyReference>
+      <AssemblyReference>C0F87782713_chats_su.ix5jNELLoE17XPxH1dHF7W</AssemblyReference>
+      <AssemblyReference>C0F87782713_listminu.DmPyP2fXkFR1dxOms1edI2</AssemblyReference>
+      <AssemblyReference>C0F87782713_listminu.iqVpF1K7HrC1oM6Xs367dqa3</AssemblyReference>
+      <AssemblyReference>C0F87782713_listminu.Sb96A3Xe5RK1ObMYg3VBuKZ</AssemblyReference>
+      <AssemblyReference>C0F87782713_normalis.5pvjE1gQhxF1ryQ091hc7s</AssemblyReference>
+      <AssemblyReference>C982043C0A4_EmailMes.lRB0E9eJSH1PW7Ea1jSnBB</AssemblyReference>
+      <AssemblyReference>CF50301268D_Case_Upd.kg2tS4UHMJL19uacX4Urc3z2</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Upd.rEvfd3M1zVS10CdGwoqFQd4</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
+      <AssemblyReference>psvaerd_lib</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Lis.gH9Pz3NgMFS1ORI044sW3kU2</AssemblyReference>
+      <AssemblyReference>C982043C0A4_CaseComm.nmttB47kydG1NXG4B2kN9T31</AssemblyReference>
+      <AssemblyReference>C982043C0A4_AccountC.4tS1013KTfS15gra33lYQB5</AssemblyReference>
+      <AssemblyReference>UiPath.Salesforce</AssemblyReference>
+      <AssemblyReference>UiPath.Salesforce.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Salesforce.Activities.Wizards</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Cre.i8lGs2aWoWC1MtJBi39L0MA3</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="1062,4119" sap2010:WorkflowViewState.IdRef="Sequence_172">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="o365di_PythonFolder" />
+      <Variable x:TypeArguments="x:String" Name="s_SPversionFile" />
+      <Variable x:TypeArguments="x:String" Name="s_ExeVersion" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_PythonFilesCollected" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_ExeSearchExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:FileExistsX DisplayName="exe_search.exe Exists" Exists="[bool_ExeSearchExists]" sap:VirtualizedContainerService.HintSize="654,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[&quot;C:\Users\&quot; &amp; io_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\exe_search.exe&quot;]" />
+    <If Condition="[Not bool_ExeSearchExists]" DisplayName=" If exe_search.exe doesnt exists" sap:VirtualizedContainerService.HintSize="654,432" sap2010:WorkflowViewState.IdRef="If_31">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_177">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw System Exception - exe_search.exe missing" Exception="[New System.Exception(&quot;exe_search.exe missing in Temp_Files folder&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_178">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" ContinueOnError="True" DisplayName="Retry Scope - Get files in Python folder on SharePoint" sap:VirtualizedContainerService.HintSize="654,505" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:01">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action - Get files in Python folder on SharePoint" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="Sequence_173">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umaf:GetFileListConnections AllColumns="{x:Array Type=umsm:Office365SharepointListColumnSlim}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DynamicMetadataFilter="{x:Null}" Filter="{x:Null}" FreeTextFilter="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" MetadataFilter="{x:Null}" SharepointLibraryItemFriendlyName="{x:Null}" SharepointListId="{x:Null}" SharepointSiteUrl="{x:Null}" SimpleSearch="{x:Null}" AuthScopesInvalid="False" BrowserDriveName="OneDrive" BrowserSiteUrl="https://lyreco-my.sharepoint.com/personal/sibot_lyreco_com/Documents/Bilder/Kamerabilder" BrowserSpecificUrl="https://lyreco-my.sharepoint.com/personal/sibot_lyreco_com/Documents/Bilder/Kamerabilder" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Get files in Python folder on SharePoint" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="GetFileListConnections_2" IncludeSubfolders="False" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="https://lyreco.sharepoint.com/:f:/r/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Python?csf=1&amp;web=1&amp;e=bReLZ4" MaxResults="200" Result="[o365di_PythonFolder]" SearchMode="UseSimple" TrimDuplicates="False" UseConnectionService="True" WhatToReturn="Files" WorkingWithDocumentLibrary="False">
+              <umaf:GetFileListConnections.DriveItemArgument>
+                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveName="OneDrive" BrowserSiteUrl="https://lyreco-my.sharepoint.com/personal/sibot_lyreco_com/Documents/Bilder/Kamerabilder" BrowserSpecificUrl="https://lyreco-my.sharepoint.com/personal/sibot_lyreco_com/Documents/Bilder/Kamerabilder" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="https://lyreco.sharepoint.com/:f:/r/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Python?csf=1&amp;web=1&amp;e=bReLZ4" ParentFullPathHint="">
+                  <umafm:DriveItemArgument.ItemIdBackup>
+                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemUrl">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                          <InArgument x:TypeArguments="x:String">015KTU54T6KDQEYI7R2FEIY2JAEOIMN7GQ</InArgument>
+                          <InArgument x:TypeArguments="x:String">Kamerabilder</InArgument>
+                          <InArgument x:TypeArguments="x:String">b!QB4A0ZbQqk-EctvNOdWaARwO2tOe715AhFEc_0IqVqaZdD1pUHGDT5aKwsDGw1yP</InArgument>
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umafm:DriveItemArgument.ItemIdBackup>
+                </umafm:DriveItemArgument>
+              </umaf:GetFileListConnections.DriveItemArgument>
+              <umaf:GetFileListConnections.FilterSelectionBackup>
+                <usau:BackupSlot x:TypeArguments="umafe:SearchSelectionMode" StoredValue="UseSimple">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="umafe:SearchSelectionMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umaf:GetFileListConnections.FilterSelectionBackup>
+            </umaf:GetFileListConnections>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean">
+          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Python files collected" Expression="[o365di_PythonFolder.Length &gt;0]" sap:VirtualizedContainerService.HintSize="416,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1" Result="[bool_PythonFilesCollected]" />
+        </ActivityFunc>
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <If Condition="[bool_PythonFilesCollected]" DisplayName="If Python files collected" sap:VirtualizedContainerService.HintSize="654,2994" sap2010:WorkflowViewState.IdRef="If_30">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,2609" sap2010:WorkflowViewState.IdRef="Sequence_174">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEach x:TypeArguments="umfm:O365DriveRemoteItem" CurrentIndex="{x:Null}" DisplayName="For Each file in Python folder on SharePoint" sap:VirtualizedContainerService.HintSize="586,2549" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[o365di_PythonFolder]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="umfm:O365DriveRemoteItem">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="umfm:O365DriveRemoteItem" Name="file" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,2412" sap2010:WorkflowViewState.IdRef="Sequence_169">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[file.FullName.Contains(&quot;version.txt&quot;)]" DisplayName="If file name = version.txt" sap:VirtualizedContainerService.HintSize="518,2352" sap2010:WorkflowViewState.IdRef="If_29">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,1967" sap2010:WorkflowViewState.IdRef="Sequence_170">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="umfm:O365DriveLocalItem" Name="o365li_VersionFile" />
+                          <Variable x:TypeArguments="x:Boolean" Name="bool_VersionFileDownloaded" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" ContinueOnError="True" DisplayName="Retry Scope - Download Version File from SharePoint" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="5" RetryInterval="00:00:01">
+                          <ui:RetryScope.ActivityBody>
+                            <ActivityAction>
+                              <Sequence DisplayName="Action - Download Version File from SharePoint" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="Sequence_176">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <umaf:DownloadFileConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID1}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" ConvertToPdf="False" DisplayName="Download Version File from SharePoint" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="DownloadFileConnections_2" Item="[file]" ItemSelectionMode="UseExisting" NewResult="[o365li_VersionFile]" UseConnectionService="True">
+                                  <umaf:DownloadFileConnections.DriveItemArgument>
+                                    <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" Item="[file]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
+                                      <umafm:DriveItemArgument.ItemIdBackup>
+                                        <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="UseExisting">
+                                          <usau:BackupSlot.BackupValues>
+                                            <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                              <x:Null />
+                                              <x:Null />
+                                              <x:Null />
+                                            </scg:List>
+                                          </usau:BackupSlot.BackupValues>
+                                        </usau:BackupSlot>
+                                      </umafm:DriveItemArgument.ItemIdBackup>
+                                    </umafm:DriveItemArgument>
+                                  </umaf:DownloadFileConnections.DriveItemArgument>
+                                </umaf:DownloadFileConnections>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:RetryScope.ActivityBody>
+                          <ui:RetryScope.Condition>
+                            <ActivityFunc x:TypeArguments="x:Boolean">
+                              <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="version.txt successfully downloaded" Expression="[o365li_VersionFile IsNot Nothing]" sap:VirtualizedContainerService.HintSize="416,129" sap2010:WorkflowViewState.IdRef="CheckTrue_2" Result="[bool_VersionFileDownloaded]" />
+                            </ActivityFunc>
+                          </ui:RetryScope.Condition>
+                        </ui:RetryScope>
+                        <ui:ReadTextFile File="{x:Null}" Content="[s_SPversionFile]" DisplayName="Read Version File from SharePoint" FileName="[o365li_VersionFile.LocalPath]" sap:VirtualizedContainerService.HintSize="450,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                        <Assign DisplayName="Check local Exe version" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_54">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[s_ExeVersion]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[FileVersionInfo.GetVersionInfo("C:\Users\" &amp; io_dict_ParameterDict("User").ToString &amp; "\Downloads\SWE_OCR\Temp_Files\exe_search.exe").FileVersion]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[String.Equals(s_ExeVersion.trim(), s_SPversionFile.trim())]" DisplayName="If version is a match" sap:VirtualizedContainerService.HintSize="450,1164" sap2010:WorkflowViewState.IdRef="If_28">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message - version OK" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[$&quot;Version Check: OK - Local version: {s_ExeVersion}, Sharepoint version: {s_SPversionFile}&quot;]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,779" sap2010:WorkflowViewState.IdRef="Sequence_168">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message - version mismatch" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Info" Message="[$&quot;Version Check: Failed - Local version: {s_ExeVersion}, Sharepoint version: {s_SPversionFile}&quot;]" />
+                              <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID2}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Upload current EXE file to vms.&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;https://cloud.uipath.com/lyrecomanagement/apps_/default/run/production/9cca6312-04f4-4a2d-8b47-ba9e312e0820/d2add106-dd8a-4f28-8dca-dd0f18786a8f/ID792154c3d2e747158bef2f2e01d6479d?el=VB&amp;amp;origin=orchestratorFolder&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="ba61e230-c57d-4771-bbb2-d0b8ccaf29b8" DisplayName="Send Email to developer" sap:VirtualizedContainerService.HintSize="382,546" sap2010:WorkflowViewState.IdRef="SendMailConnections_4" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.High]" InputType="HTML" SaveAsDraft="False" Subject="OCR Python Exe version missmatch" To="[New String(){&quot;psvaerd@lyreco.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+                                <umam:SendMailConnections.AttachmentsBackup>
+                                  <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </umam:SendMailConnections.AttachmentsBackup>
+                                <umam:SendMailConnections.InputTypeBackup>
+                                  <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </umam:SendMailConnections.InputTypeBackup>
+                                <umam:SendMailConnections.MailboxArg>
+                                  <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                                    <umamm:MailboxArgument.Backup>
+                                      <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID2" StoredValue="NoMailbox">
+                                        <usau:BackupSlot.BackupValues>
+                                          <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                                        </usau:BackupSlot.BackupValues>
+                                      </usau:BackupSlot>
+                                    </umamm:MailboxArgument.Backup>
+                                  </umamm:MailboxArgument>
+                                </umam:SendMailConnections.MailboxArg>
+                              </umam:SendMailConnections>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="Sequence_171">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message - version.txt not found" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Warn" Message="[&quot;version.txt not found&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEach>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="620,224" sap2010:WorkflowViewState.IdRef="Sequence_175">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message - Python files warning" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Warn" Message="[&quot;Python files required for version check not found&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

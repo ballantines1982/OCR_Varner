@@ -1,0 +1,82 @@
+# -----------------------------------------
+# UiPath Studio - Recommended .gitignore
+# -----------------------------------------
+
+# UiPath specific cache and backup folders
+/.local/
+/.project/
+/settings/
+/logs/
+/.uit/
+*/.screenshots/
+*/.ipynb_checkpoints/
+
+# UiPath Robots / Execution logs
+*.log
+*.nlog
+*.etl
+
+# NuGet packages and publish output
+*.nupkg
+/.packages/
+/publish/
+/Dependencies/
+
+# Compiled output
+/bin/
+/obj/
+/library/
+
+/*Backup*/
+
+# Local configuration files
+*.user
+*.config
+*.cache
+
+# Orchestrator credentials and local values
+*.json.user
+project.settings.json
+project.user.json
+
+# Test result files
+/TestResults/
+/CoverageReports/
+
+# Temporary & system files
+*.tmp
+*.temp
+*.db
+*.DS_Store
+Thumbs.db
+~$*
+
+# VSCode & Rider settings (if used)
+.vscode/
+.idea/
+
+# Python temp (if using Python activities)
+__pycache__/
+*.pyc
+*.pyo
+
+# Excel temp
+*.xlk
+
+# UiPath Test Automation
+*.uitest
+/test_output/
+
+# UiPath Document Understanding (ML local cache)
+/du_cache/
+
+# -----------------------------------------
+# Allow these (important for the project)
+# -----------------------------------------
+
+!project.json
+!*.xaml
+!*.json
+!*.txt
+!*.md
+!.gitignore

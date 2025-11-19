@@ -1,0 +1,428 @@
+Received: from PAVPR02MB9305.eurprd02.prod.outlook.com (2603:10a6:102:30e::16)
+ by AS8PR02MB7668.eurprd02.prod.outlook.com with HTTPS; Wed, 22 Oct 2025
+ 14:17:26 +0000
+Received: from AM8P189CA0005.EURP189.PROD.OUTLOOK.COM (2603:10a6:20b:218::10)
+ by PAVPR02MB9305.eurprd02.prod.outlook.com (2603:10a6:102:30e::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9228.16; Wed, 22 Oct
+ 2025 14:17:22 +0000
+Received: from AM4PEPF00025F9C.EURPRD83.prod.outlook.com
+ (2603:10a6:20b:218:cafe::a3) by AM8P189CA0005.outlook.office365.com
+ (2603:10a6:20b:218::10) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9253.12 via Frontend Transport; Wed,
+ 22 Oct 2025 14:17:21 +0000
+Authentication-Results: spf=fail (sender IP is 185.132.180.206)
+ smtp.mailfrom=em2221.mysupplies.varner.no; dkim=fail (body hash did not
+ verify) header.d=mysupplies.varner.no;dmarc=fail action=quarantine
+ header.from=mysupplies.varner.no;compauth=none reason=451
+Received-SPF: Fail (protection.outlook.com: domain of
+ em2221.mysupplies.varner.no does not designate 185.132.180.206 as permitted
+ sender) receiver=protection.outlook.com; client-ip=185.132.180.206;
+ helo=mx07-0032ca01.pphosted.com;
+Received: from mx07-0032ca01.pphosted.com (185.132.180.206) by
+ AM4PEPF00025F9C.mail.protection.outlook.com (10.167.16.11) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9275.0
+ via Frontend Transport; Wed, 22 Oct 2025 14:17:20 +0000
+Received: from pps.filterd (m0157091.ppops.net [127.0.0.1])
+	by mx07-0032ca01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59MDkovk569187
+	for <se.order@lyreco.com>; Wed, 22 Oct 2025 16:17:20 +0200
+Authentication-Results-Original: ppops.net;	spf=pass
+ smtp.mailfrom=bounces+10688221-ea36-se.order=lyreco.com@em2221.mysupplies.varner.no;
+	dkim=pass header.s=s1 header.d=mysupplies.varner.no;	dmarc=pass
+ header.from=mysupplies.varner.no
+Received: from o1.ptr9823.orders.varner.com (o1.ptr9823.orders.varner.com [149.72.148.155])
+	by mx07-0032ca01.pphosted.com (PPS) with ESMTPS id 49y09nr53q-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <se.order@lyreco.com>; Wed, 22 Oct 2025 16:17:19 +0200 (MEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysupplies.varner.no;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:to:cc:content-type:date:from:subject:to;
+	s=s1; bh=SwFu7LQWjXEYltowF8yU1UArbQny31FKhkkpRObDqQc=;
+	b=FEXxb9EbquQPw/8X/Yh+CLXbGMdgDay1rK9qiA+K7clpM2GXvbzVRPFP0l78ZEhAfYEU
+	tOIj0Q++A+aI4gChgotObF96jrdcqfXHOfl20/pR+L5D2cro8D3wivLqoaSMLZFxwvMErJ
+	WIN2scfiQ+oWY2cCElPP6CvbYpzoEdrJ+8uAn8jwTf0yPCu6DJguJpO8CEJUlA+iV5sINj
+	qE3CBUcRzAZaf+US+em4Rwwv/wz5E0OVxc3fpivPPWmoT4f69PsJ6DDU9homo4scYvRRBH
+	JJZPHTXWSlwWxhvAOx5cx076i6hDgu6zK/0nJDvsILDG/wzAt9g/fTRn8b9gJiaQ==
+Received: by recvd-59c5cbbc7-px4gt with SMTP id recvd-59c5cbbc7-px4gt-1-68F8E76E-80
+	2025-10-22 14:17:18.572879285 +0000 UTC m=+4217547.482634129
+Received: from MTA2ODgyMjE (unknown)
+	by geopod-ismtpd-0 (SG) with HTTP
+	id 0bKQwiZ6T2KNiDdfXHP9MA
+	Wed, 22 Oct 2025 14:17:18.537 +0000 (UTC)
+Date: Wed, 22 Oct 2025 14:17:18 +0000 (UTC)
+From: Varner MySupplies <T08@mysupplies.varner.no>
+Message-ID: <0bKQwiZ6T2KNiDdfXHP9MA@geopod-ismtpd-0>
+Subject: Varner MySupplies: New Order From T08 T08 Volt, Ikano
+ =?UTF-8?B?TGlua8O2cGluZw==?=
+Reply-To: Varner MySupplies <se682633@varnerstore.com>
+X-SG-EID: =?us-ascii?Q?u001=2Ew04+A+RnCHiH402TFf8LrRXqg3OhOqP7JmaEPvOI1k72Ut7pAC8gjo7z0?=
+ =?us-ascii?Q?5fvXtWpS4bY2pLIe6ikTj2d7M0h76JYigI5D=2FzD?=
+ =?us-ascii?Q?=2F1NgeohJ4a3iIKQ8UUbSSLssal0U8WmeAJTdksl?=
+ =?us-ascii?Q?6dH1rXAawiygMlRuas3tq429idALNYxgJUx6LW1?=
+ =?us-ascii?Q?742Xk6EBIXbbhFGP3nT7uk18Vucy27SQZ5v5xbV?=
+ =?us-ascii?Q?Nfj=2FFEkJF3JaUZuhYzrlS33LlA8DOWzrhkpu7Id?= =?us-ascii?Q?W5Ab?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BvOzH9DzmBoXN1iteSKz1TtLRUloF5cSnsRub?=
+ =?us-ascii?Q?e9H0CJ6ujPKUXfwBr2OImLOvYw9bQ=3D=3D?=
+To: Lyreco Sverige <SE.order@lyreco.com>
+X-Entity-ID: u001.n52g787nYtVrDbRVwqDv2A==
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDIyMDExNyBTYWx0ZWRfX+2zoLJXmdrsn
+ Z5F06leFQskXPk2gZfz3IPi/l10BKo16cNh0KQ6IPsoEoYtdDB1kBK2scwHT4B7vG8mPXknYK1+
+ uBlBzBcG7IAGQ/ntQlVMX/Gr0aDIblEo0lF7eI8abJ9I2MQgWKjvLE+RzP3S81QEw6O0tfOg0F/
+ 90fe5DYRRM27RdAArhPzJHrWL48LApnagcbW9n/6JL+P5kSnsvVCKqwopzxlyK7337PPYBc+mSG
+ afh06oGFAdi2yWNUcfvcITbeOzmqeRwze/wK7lFyoU09xJpw228tiXU8pKZen7HhbO7KZLmY/PW
+ cZPTpN2gAqL6sckPdTcEcU1XM1g9wr7hTUL4biRR0a5Ug+WkkV14Ai88Kzjv5D/XvZ9kwwA3GrQ
+ aXvMO0UVcKm9gxjXqSrV0xt9cIVB7wG9MoBpaSbAjcprV/EatE66Y+Lmw5msocs/saquBro6new
+ sNS557gsZeXtFUlEOrw==
+X-Proofpoint-ORIG-GUID: zndMOpohovp388gJ569LIBdomFjN_OSt
+X-CLX-Shades: Deliver
+X-CLX-Response: 1TFkXGxoaGhEKTHoXGxoaGhEKWUQXbBpmTB5OZlkaZFMRClhYF2wTf2gSXkJ
+ eYXNkEQp4Thdub0V7cFt7fVBBUhEKeEsXbBN/aBJeQl5hc2QRCnhMF2tbRx1mQ1lZfUliEQp5TB
+ drW0cdZkNZWX1JYhEKQ0gXBxsTHxEKQ1kXBxgSEhEKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZF
+ xgbGhEKX00XZ2ZyEQpZSRcacRoQGncGGxMacRsfHBAadwYYGgYaEQpZXhdsbHkRCklGF0ZTWE9J
+ RXVCRVleT04RCklHF3hPTREKQ04XUEROZ2VaRUJFXFoZEhJNYB8cE2ZjaE5FR2xAZHVleV4RClh
+ cFx8EGgQeGxoFGxoEHRoEGxkeBBkeEBseGh8aEQpeWRdNZkVdZhEKTVwXHxsbEQpMWhd7bXtNax
+ EKRVkXaGBrEQpMXxd6BQUFBQUFBQUFGBEKTEYXb2trY2trEQpCTxdjXRlSX0kTZ39DZxEKQ1oXG
+ x4TBB0YBBseEgQbHx8RCkJeFxsRCkJcFxsRCkJLF29vRllNaR4bTk5iEQpCSRdlWRJ9bkZZfllQ
+ YREKQkUXYWllG3oSGkR7H0sRCkJOF2VZEn1uRll+WVBhEQpCTBd6HWcaGmVmHWR4RREKQmwXY1p
+ Bek9FWFlGGU8RCkJAF2R4cEFneRNNeVgBEQpCWBdubVBASEkFGGdechEKWlgXGREKeUMXYWddZh
+ 1ITWwTRFgRCllLFxMcHhEKWksXGBoZHB8RCnBnF2RcTk9OH0tNGnwSEB4SEQpwaBduflxtBVsTb
+ 1JlGRAZGhEKcGgXYAUfHn9SE1liU3kQHRkRCnBoF219WHhEGkJeYB4BEBkaEQpwaBd6THkYZGtt
+ X3BTZhAdGBEKcGgXZHMTcHp+QFJ4W0MQGRoRCnBoF2VjE0BMXFBQf1AeEBkaEQpwaBdoXWdvaUt
+ DRWddGBAZGhEKcGgXbW1FbhJ+aWcBQnMQGRoRCnBnF25HTgV/fXlSRm0FEBkaEQpwfRdlQXNMf1
+ pjQkB7ZxAZGhEKcH8XYnp8Z25uQm1IS2MQHBMRCnBfF2dSWEIFGk14SEQeEBMaEQpwbBduXkNIH
+ Wh7WX1ofBATGhEKcEwXYGlYT2NlQAVtSxIQGRoRCm1+FxoRClhNF0sRIA==
+X-Proofpoint-GUID: zndMOpohovp388gJ569LIBdomFjN_OSt
+X-Authority-Analysis: v=2.4 cv=Ven6/Vp9 c=1 sm=1 tr=0 ts=68f8e76f b=1 cx=c_pps
+ a=7Ew3zyrGLT9RMiZlHqiwSg==:117 a=7Ew3zyrGLT9RMiZlHqiwSg==:17
+ a=8nJEP1OIZ-IA:10 a=x6icFKpwvdMA:10 a=5KLPUuaC_9wA:10 a=-OPqiW0-k88A:10
+ a=Kan8h273Bse8B8Jy5C1n:22 a=9uEqCyOpAAAA:8 a=7ZnyD41JJ4f2d2g4CAQA:9
+ a=iH2laLk9m3c63tph:21 a=_W_S_7VecoQA:10 a=wPNLvfGTeEIA:10
+ a=pnI2m26_WTs5bHz79ivh:22 a=6echl_FrlDlslMgcHnmX:22 a=r87b3DECw_Ht_DIp6SIn:22
+ a=nKkFSiEbYKIpaBOkqhVu:22
+X-Proofpoint-Banner-Trigger: inbound
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-K4b3a7f7p6a: true
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-22_05,2025-10-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0
+ priorityscore=1000 malwarescore=0 phishscore=0 impostorscore=0
+ lowpriorityscore=0 spamscore=0 clxscore=1000 adultscore=0 bulkscore=0
+ suspectscore=0 classifier=customer_allow authscore=0 authtc= authcc=
+ route=inbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510020000
+ definitions=main-2510220117 domainage_hfrom=964 domainage_replyto=20365
+Return-Path: bounces+10688221-ea36-se.order=lyreco.com@em2221.mysupplies.varner.no
+X-MS-Exchange-Organization-ExpirationStartTime: 22 Oct 2025 14:17:20.5788
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: b4d99df6-67eb-4139-2c0a-08de1175b69d
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00025F9C:EE_|PAVPR02MB9305:EE_|AS8PR02MB7668:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00025F9C.EURPRD83.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: b4d99df6-67eb-4139-2c0a-08de1175b69d
+X-LD-Processed: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea,ExtFwd
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|69100299015|29132699027|82310400026|4076899003|8096899003;
+X-Forefront-Antispam-Report: CIP:185.132.180.206;CTRY:GB;LANG:en;SCL:-1;SRV:;IPV:CAL;SFV:SKN;H:mx07-0032ca01.pphosted.com;PTR:mx07-0032ca01.pphosted.com;CAT:NONE;SFS:(13230040)(69100299015)(29132699027)(82310400026)(4076899003)(8096899003);DIR:INB;
+X-MS-Exchange-ForwardingLoop: ForwardingHandled;085ec1c2-f3b9-406a-b64f-b7af1643f3ea
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2025 14:17:20.4971
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b4d99df6-67eb-4139-2c0a-08de1175b69d
+X-MS-Exchange-CrossTenant-Id: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00025F9C.EURPRD83.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAVPR02MB9305
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:06.1773115
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9253.009
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?Qve/JYrkzjDAmWKft3X5/lI8S/b3Dey9hbCuqP5E8i2rzoUAaNDY3K6CmV?=
+ =?iso-8859-1?Q?43O1aGWJl+yh8rAJ7NQiaE1b5tEpUWpGX13UeF1tsc2D91AkB6FEm17Fiz?=
+ =?iso-8859-1?Q?k90Kw9jniPBnzALtdiTJvrNH3MeOJEKQmm9B1NAOrT0W3pFnkaXyxljl2o?=
+ =?iso-8859-1?Q?8S8lWIucmoMIRWQQkRvNQNWjHCRzFTFTYBVpmZ3kidb9Cx3DrCBg9D0yr0?=
+ =?iso-8859-1?Q?eq1HTtpXJwrdIQekzXcisWXvwACBpylbp1CTPDtmX9riMIOeBj/m7GiF3M?=
+ =?iso-8859-1?Q?uV3Rr1itOtB48H7IW5lI3omtaZBSyF+fP+LuZMW9hQuRma8vTOq9QgwxIx?=
+ =?iso-8859-1?Q?I+awFN91ai6VlVmY4FztJnFqvzp+5hdNkToiSZrxKIUXEZB/Tnz+ymvpxL?=
+ =?iso-8859-1?Q?Tqrk3gZ0JVX/qdQfORsItDxOyYNIzDu2shBIUXOOlFESqZI1WQLd6a899y?=
+ =?iso-8859-1?Q?rFsWA72zwar8NdZoWTkeDWVnLWeuG3gJRLiVT9FUJxbCGetPJAVOMaXyGw?=
+ =?iso-8859-1?Q?AyLvMgQM/vTm5unh+/N+JfuTOttCHoSFUmYgj3v6fkstiTA1aJE+rJyRRv?=
+ =?iso-8859-1?Q?tULK6mBeV/hY65JAN0cglTQfAuzWQsFJ3JnXuEBU93pKbJIqtGBCVDAfes?=
+ =?iso-8859-1?Q?28aIkgNaksVLiLG8yGcPZtoThzsERbGCCK8qCDAN049ORz0IG2TZzMPtiF?=
+ =?iso-8859-1?Q?QwNYCYpoVDMS8eLIjFii/K1sHJw5Ds77LOQ6nRWPbNkp1B7B+IlXT20JIm?=
+ =?iso-8859-1?Q?XMcC9WEuqxpdoUF98CoODVg6JawOuSbzUUuiItGH8lR6sNjLarrVg++Z3C?=
+ =?iso-8859-1?Q?ppgkH7n8ttRXgmnemdT9ZBl8f20lEwaKJDPKfXy+u/Lb0oqAddJR4D3G12?=
+ =?iso-8859-1?Q?8qi0SsTkLAWA/RJeEAIhpSB6XmPUYZkVkbhRd6L9lfYsHbuVaSi0QLSVps?=
+ =?iso-8859-1?Q?aSugTNqpA5cCctm2fy2M8wunqV/AsaqcMcCiUMd1qrDDGuOBX4scuyFciA?=
+ =?iso-8859-1?Q?4t+W/mqPU3GetooBP2uNk5j8sAzpsNqNb4jl9mIfotjxRy6gYCf/rjLPr2?=
+ =?iso-8859-1?Q?wEMetWTuL2ASiyxe+N3t3/vCIqPfBalrTC9/vFjhQOGkR0BFccoAbdcAhh?=
+ =?iso-8859-1?Q?sqx13w5DPB8WaS+hxzYodTpurUT5QFF//Bkcs2GkaaniwKS3XZ7A4B4G0G?=
+ =?iso-8859-1?Q?UEYyRHXrDKS9agJT1Q7xoQXxhqGHXXWAsr05jW13bhYXAQjL/oRh9KlZ7u?=
+ =?iso-8859-1?Q?X+s1I6gRg47tuVDHkAXbCkTHqEDw8c0tV2FQ5JTY4PBf+ROxGJMX0kykcx?=
+ =?iso-8859-1?Q?GHQUu29yc8z/BTEa0TdP/fCe8+zFDk4IHGVXi8/d2qGvH5S0YxiTN9gPu+?=
+ =?iso-8859-1?Q?zemWAc7I0UOgNEztagoWEyNYNVtRQgjbZPztyNWSPZ7u5G58vMih0X1xW0?=
+ =?iso-8859-1?Q?gEp9s79Ak8K6fINlx1BIGU7VkftcOF5bUF7mMskqFALEEbKHr9xrOmsV+4?=
+ =?iso-8859-1?Q?M5SvDYO2P9Uk9Mf9wB6aaGl7z7JW06dinGuCFTqMkbIk51RrGBiqnweXOa?=
+ =?iso-8859-1?Q?Tj2aNfmpOFSR5MCY/p2+J4S0CB6WtmJKGAwGzwYuNqP7nKnEGtujzv7yxp?=
+ =?iso-8859-1?Q?cyBAgLRSlKbfkVVCHPrz7OKuT4QB/CCtoWzZIL9wBbPJpWaeBtmvzZEoC8?=
+ =?iso-8859-1?Q?J8XCNhy/RN1jo9ViR+GcwWJlrOOoQqpB2mN2mwA2XiyzVaC1nyWAaiUey0?=
+ =?iso-8859-1?Q?GDxuJqwIomWAD9PykjFEk8Vb7Wdxg+xdtppczjC4DchSxwMtztYjgVv3dt?=
+ =?iso-8859-1?Q?wutiL73rXladg77TnYkbrXscq52WvUABN2aw8ckocrtLOynXGle8sZyp9v?=
+ =?iso-8859-1?Q?W3/bkts04LJSTtXDHngZgu/bgJ5Y71RfUzMgQS2CXL1jVg1OOfHPnmaF6G?=
+ =?iso-8859-1?Q?yDJweBLZe5BEyWjdQqUdK4PxTpy0ztRcillQ5mFmJ4M2QcdrKQojErTQ1d?=
+ =?iso-8859-1?Q?USXclhdIIaSOzSHi0m8Urg6wphbtH4HP7Pd0pv1Fhg9Ksd/l2RIiKnsYi2?=
+ =?iso-8859-1?Q?/Fe0wHbwLPaH1AS1NCiN+oU8yLy/B2nkl0dtQWt1LDGVizRmpcs/YMwnEv?=
+ =?iso-8859-1?Q?fFC4TzMRaL4Nmz5DiQcbXxWiUzasL1Xfr18rWzqKITXIgWQ+1pVcHJ6q2X?=
+ =?iso-8859-1?Q?n4zOl20lhSqwPLJI/xDCYu9LkWFyeWClA5yYfsJvRb4pj86ochq0d4Vasb?=
+ =?iso-8859-1?Q?ytrNYJHhG230mHwkeDxPaTUNDxtFc0W8o0JqXrxZ20rLdOsBQ+OkzM+22F?=
+ =?iso-8859-1?Q?ngHnAENv4E0YbGjGHgBrGGh6IXHpAG+Nw961fowusqVQ4zirG8R7gr3nB4?=
+ =?iso-8859-1?Q?2fQ862LYdur8uBHraUC6l3NYBdqUMHYdDAEyWUCdC88eOY5YOsV8hTeG62?=
+ =?iso-8859-1?Q?3ZIoDALZX0jSWGa3autClMarhgU=3D?=
+MIME-Version: 1.0
+
+<!DOCTYPE html><!-- BaNnErBlUrFlE-BoDy-start --><!-- Preheader Text : BEGIN=
+ --><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8=
+859-1"><div style=3D"display:none !important;display:none;visibility:hidden=
+;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;op=
+acity:0;overflow:hidden;">
+New order from T08 T08 Volt, Ikano Link=F6ping Order Number: 43327 Products=
+: Article number Name Units per pack Number Of Packs ordered 121425 Bl=E4ck=
+patron HP CN625AE 970XL svart 1 1 121427 Bl=E4ckpatron HP CN627AE 971XL mag=
+enta 1 1 121428 Bl=E4ckpatron</div>
+<!-- Preheader Text : END -->
+
+<!-- Email Banner : BEGIN -->
+<div style=3D"display:none !important;display:none;visibility:hidden;mso-hi=
+de:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;opacity:0=
+;overflow:hidden;">ZjQcmQRYFpfptBannerStart</div>
+
+<!--[if ((ie)|(mso))]>
+  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" st=
+yle=3D"padding: 0px 0px 10px 0px; direction: ltr" lang=3D"en"><tr><td>
+    <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"paddin=
+g: 0px 8px 6px 8px; width: 100%; border-radius:4px; border-top:4px solid #c=
+6c693;background-color:#eeed24;"><tr><td valign=3D"top">
+      <table align=3D"left" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"padding: 0px 8px 4px 8px; font-size: 12px; line-height: 16px">
+	<tr><td style=3D"color:#000000; font-family: 'Arial', sans-serif; font-wei=
+ght:bold; font-size:14px; line-height: 20px; direction: ltr">
+	  This Message Is From an External Sender
+	</td></tr>
+	<tr><td style=3D"color:#000000; font-weight:normal; font-family: 'Arial', =
+sans-serif; font-size:12px; direction: ltr">
+          This message came from outside your organization.
+	</td></tr>
+
+      </table>
+
+    </td></tr></table>
+  </td></tr></table>
+<![endif]-->
+
+<![if !((ie)|(mso))]>
+  <div dir=3D"ltr" lang=3D"en" id=3D"pfptBannerrabws1c" style=3D"all: rever=
+t !important; display:block !important; text-align: left !important; margin=
+: 0 0 10px 0 !important; padding:7px 16px 8px 16px !important; border-radiu=
+s: 4px !important; min-width: 200px !important; background-color: #eeed24 !=
+important; background-color: #eeed24; border-top: 4px solid #c6c693 !import=
+ant; border-top: 4px solid #c6c693;">
+    <div id=3D"pfptBannerrabws1c" style=3D"all: unset !important; float:lef=
+t !important; display:block !important; margin: 1px 0 1px 0 !important; max=
+-width: 600px !important;">
+      <div id=3D"pfptBannerrabws1c" style=3D"all: unset !important; display=
+:block !important; visibility: visible !important; background-color: #eeed2=
+4 !important; color:#000000 !important; color:#000000; font-family: 'Arial'=
+, sans-serif !important; font-family: 'Arial', sans-serif; font-weight:bold=
+ !important; font-weight:bold; font-size:14px !important; line-height:1.29 =
+!important; line-height:1.29">
+	This Message Is From an External Sender
+      </div>
+      <div id=3D"pfptBannerrabws1c" style=3D"all: unset !important; display=
+:block !important; visibility: visible !important; background-color: #eeed2=
+4 !important; color:#000000 !important; color:#000000; font-weight:normal; =
+font-family: 'Arial', sans-serif !important; font-family: 'Arial', sans-ser=
+if; font-size:12px !important; line-height:1.5 !important; line-height:1.5;=
+ margin-top:2px !important;">
+This message came from outside your organization.
+      </div>
+
+    </div>
+
+    <div style=3D"clear: both !important; display: block !important; visibi=
+lity: hidden !important; line-height: 0 !important; font-size: 0.01px !impo=
+rtant; height: 0px">&nbsp;</div>
+  </div>
+<![endif]>
+
+<div style=3D"display:none !important;display:none;visibility:hidden;mso-hi=
+de:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;opacity:0=
+;overflow:hidden;">ZjQcmQRYFpfptBannerEnd</div>
+<!-- Email Banner : END -->
+
+<!-- BaNnErBlUrFlE-BoDy-end -->
+<html lang=3D"en">
+<head><!-- BaNnErBlUrFlE-HeAdEr-start -->
+<style>
+  #pfptBannerrabws1c { all: revert !important; display: block !important;
+    visibility: visible !important; opacity: 1 !important;
+    background-color: #eeed24 !important;
+    max-width: none !important; max-height: none !important }
+  .pfptPrimaryButtonrabws1c:hover, .pfptPrimaryButtonrabws1c:focus {
+    background-color: #dad976 !important; }
+  .pfptPrimaryButtonrabws1c:active {
+    background-color: #c6c693 !important; }
+  html:root, html:root>body { all: revert !important; display: block !impor=
+tant;
+    visibility: visible !important; opacity: 1 !important; }
+</style>
+
+<!-- BaNnErBlUrFlE-HeAdEr-end -->
+
+   =20
+    <style>
+
+        .orders {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+            .orders td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+        .shopInfo {
+            width: 100%
+        }
+    </style>
+    <title>New Order From T08 T08 Volt, Ikano Link=F6ping</title>
+</head>
+<body style=3D"font-family: sans-serif;">
+    <h2>New order from  T08 T08 Volt, Ikano Link=F6ping</h2>
+
+    <h3>Order Number: 43327</h3>
+    <h4>Products:</h4>
+
+
+    <table class=3D"orders">
+        <tr>
+            <th>Article number</th>
+            <th>Name</th>
+            <th>Units per pack</th>
+            <th>Number Of Packs ordered</th>
+        </tr>
+        <tr>
+    <td>121425</td>
+    <td>Bl=E4ckpatron HP CN625AE 970XL svart</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>121427</td>
+    <td>Bl=E4ckpatron HP CN627AE 971XL magenta</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>121428</td>
+    <td>Bl=E4ckpatron HP CN628AE 971XL gul</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>121426</td>
+    <td>Bl=E4ckpatron HP CN626AE 971XL cyan</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>11060978</td>
+    <td>F=F6nsterputs LYRECO Pro spray 750ml</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>250454</td>
+    <td>Papperskorgsp=E5se HD 30L vit 100/RL</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>177900</td>
+    <td>Kaffe BKI Santos 500g</td>
+    <td>1</td>
+    <td>1</td>
+</tr><tr>
+    <td>134659</td>
+    <td>Kaffemj=F6lk ARLA 0,5% 2cl 100/FP</td>
+    <td>1</td>
+    <td>1</td>
+</tr>
+
+    </table>
+
+    <h4>Store Info:</h4>
+    <div>
+
+        <table class=3D"shopInfo">
+            <tr>
+                <td>Store Number</td>
+                <td>T08</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>T08 Volt, Ikano Link=F6ping</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>T08@volt.no</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>+46 70 33 37 132</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Sweden</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>Svedengatan 7</td>
+            </tr>
+            <tr>
+                <td>Postal Code</td>
+                <td>581 28</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>LINK=D6PING</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Sweden</td>
+            </tr>
+
+
+        </table>
+
+    </div>
+
+    <h4>Products are delivered to:</h4>
+    Svedengatan 7, 581 28 LINK=D6PING, Sweden
+
+<img src=3D"https://u10688221.ct.sendgrid.net/wf/open?upn=3Du001.O4biw6hP91=
+QzeWDXwiGs47-2Bzj146TnmswQJgZaLYu4C19QVqPjdm-2FKHziLVIOmXiRrWCD9Au4MUNKpRY7=
+TUeM1w6pNPtrMdlipserwg7lo5gsvCmlDgrcCCo-2Bj0iLvOjldCgboFojJOEczJHgmUWeX3R-2=
+BNdRKEB5-2BCn8iEON3iELCl6iCkwKELCEQHM33B5ADazY6FPWgIsQzGYFpWFvYbziKjSx3PksD=
+CSY6XPLFBZiPMOmcGBSDJFoaJ9odpxb" alt=3D"" width=3D"1" height=3D"1" border=
+=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 !=
+important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0=
+ !important;margin-left:0 !important;padding-top:0 !important;padding-botto=
+m:0 !important;padding-right:0 !important;padding-left:0 !important;"></bod=
+y>
+</html>

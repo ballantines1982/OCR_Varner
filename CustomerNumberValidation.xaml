@@ -1,0 +1,744 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CustomerNumberValidation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Private.Xml.Linq" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C982043C0A4_CaseComment_Create.Bundle;assembly=C982043C0A4_CaseComm.nmttB47kydG1NXG4B2kN9T31" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C982043C0A4_Case_Update.Bundle;assembly=C982043C0A4_Case_Upd.rEvfd3M1zVS10CdGwoqFQd4" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umsm="clr-namespace:UiPath.MicrosoftOffice365.Sharepoint.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_bool_ValidationNeeded" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="in_Top5Reciever" Type="InArgument(scg:IEnumerable(x:String))" />
+    <x:Property Name="in_dict_ParameterDict" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>700,5257</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CustomerNumberValidation_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Contracts.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>C982043C0A4_CaseComm.nmttB47kydG1NXG4B2kN9T31</AssemblyReference>
+      <AssemblyReference>C982043C0A4_CaseComm.nmttB47kydG1NXG4B2kN9T31</AssemblyReference>
+      <AssemblyReference>C982043C0A4_AccountC.4tS1013KTfS15gra33lYQB5</AssemblyReference>
+      <AssemblyReference>C982043C0A4_AccountC.4tS1013KTfS15gra33lYQB5</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Cre.i8lGs2aWoWC1MtJBi39L0MA3</AssemblyReference>
+      <AssemblyReference>C982043C0A4_Case_Cre.i8lGs2aWoWC1MtJBi39L0MA3</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="CustomerNumberValidation" sap:VirtualizedContainerService.HintSize="1059,2882" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="s_Temp_FilesPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_Top5Exists" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_OCRexcelExists" />
+      <Variable x:TypeArguments="x:String" Name="s_EventID" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Assign Temp_Files Folder" sap:VirtualizedContainerService.HintSize="620,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[s_Temp_FilesPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["C:\Users\" &amp; in_dict_ParameterDict("User").ToString &amp; "\Downloads\SWE_OCR\Temp_Files"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Top 5 file Exists?" sap:VirtualizedContainerService.HintSize="620,84" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,216" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FileExistsX DisplayName="File Top5 Exists" Exists="[bool_Top5Exists]" sap:VirtualizedContainerService.HintSize="382,156" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\Top_5_Matches_&quot; &amp; in_dict_ParameterDict(&quot;EventID&quot;).ToString &amp; &quot;.xlsx&quot;]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:FileExistsX DisplayName="File OCR data Exists" Exists="[bool_OCRexcelExists]" sap:VirtualizedContainerService.HintSize="620,165" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\OCR_&quot; &amp; in_dict_ParameterDict(&quot;EventID&quot;).ToString &amp; &quot;.xlsx&quot;]" />
+    <If sap2010:Annotation.AnnotationText="Creates a unique folder with eventID as name. &#xA;Reason: To make it identifiable by Bot 2 that finishes the job." Condition="[bool_OCRexcelExists]" DisplayName="If Excel file exists" sap:VirtualizedContainerService.HintSize="620,2466" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="586,1856" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="o365_EventFolder" />
+            <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="o365di_ValidationFolder" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Creates unique folder in Job_validation folder on SharePoint" sap:VirtualizedContainerService.HintSize="552,1634" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umaf:GetFileListConnections AllColumns="{x:Array Type=umsm:Office365SharepointListColumnSlim}" BrowserDriveName="{x:Reference __ReferenceID1}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Reference __ReferenceID2}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DynamicMetadataFilter="{x:Null}" Filter="{x:Null}" FreeTextFilter="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID3}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" MetadataFilter="{x:Null}" SharepointLibraryItemFriendlyName="{x:Null}" SharepointListId="{x:Null}" SharepointSiteUrl="{x:Null}" SimpleSearch="{x:Null}" sap2010:Annotation.AnnotationText="Locates Job_Validation folder on SharePoint" AuthScopesInvalid="False" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Get file or folder List - Job_Validation folder" sap:VirtualizedContainerService.HintSize="518,215" sap2010:WorkflowViewState.IdRef="GetFileListConnections_1" IncludeSubfolders="False" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="https://lyreco.sharepoint.com/:f:/r/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation?csf=1&amp;web=1&amp;e=7sfazz" MaxResults="200" Result="[o365di_ValidationFolder]" SearchMode="UseSimple" TrimDuplicates="False" UseConnectionService="True" WhatToReturn="[UiPath.MicrosoftOffice365.Enums.FindFilesAndFoldersResultType.Folders]" WorkingWithDocumentLibrary="False">
+              <umaf:GetFileListConnections.BrowserSpecificUrl>
+                <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID0" />
+              </umaf:GetFileListConnections.BrowserSpecificUrl>
+              <umaf:GetFileListConnections.DriveItemArgument>
+                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSpecificUrl="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="https://lyreco.sharepoint.com/:f:/r/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation?csf=1&amp;web=1&amp;e=7sfazz" ParentFullPathHint="">
+                  <umafm:DriveItemArgument.BrowserDriveName>
+                    <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID1" />
+                  </umafm:DriveItemArgument.BrowserDriveName>
+                  <umafm:DriveItemArgument.BrowserSiteUrl>
+                    <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID2" />
+                  </umafm:DriveItemArgument.BrowserSiteUrl>
+                  <umafm:DriveItemArgument.ItemIdBackup>
+                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="ItemUrl">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                          <InArgument x:TypeArguments="x:String" />
+                          <InArgument x:TypeArguments="x:String" />
+                          <InArgument x:TypeArguments="x:String" />
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umafm:DriveItemArgument.ItemIdBackup>
+                </umafm:DriveItemArgument>
+              </umaf:GetFileListConnections.DriveItemArgument>
+              <umaf:GetFileListConnections.FilterSelectionBackup>
+                <usau:BackupSlot x:TypeArguments="umafe:SearchSelectionMode" StoredValue="UseSimple">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="umafe:SearchSelectionMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umaf:GetFileListConnections.FilterSelectionBackup>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umaf:GetFileListConnections>
+            <ui:ForEach x:TypeArguments="umfm:O365DriveRemoteItem" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Deletes unique folder if it allready exists." DisplayName="For Each folder in Job_Validation" sap:VirtualizedContainerService.HintSize="518,753" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[o365di_ValidationFolder]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="umfm:O365DriveRemoteItem">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="umfm:O365DriveRemoteItem" Name="folder" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484,576" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap2010:Annotation.AnnotationText="Delete the folder" Condition="[String.Equals(folder.FullName, in_dict_ParameterDict(&quot;EventID&quot;).ToString)]" DisplayName="If folder name = in_s_EventID" sap:VirtualizedContainerService.HintSize="450,516" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <umaf:DeleteItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID4}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Delete file or folder" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="DeleteItemConnections_1" Item="[folder]" ItemSelectionMode="UseExisting" UseConnectionService="True">
+                            <umaf:DeleteItemConnections.DriveItemArgument>
+                              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" Item="[folder]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
+                                <umafm:DriveItemArgument.ItemIdBackup>
+                                  <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="UseExisting">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                        <x:Null />
+                                        <x:Null />
+                                        <x:Null />
+                                      </scg:List>
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </umafm:DriveItemArgument.ItemIdBackup>
+                              </umafm:DriveItemArgument>
+                            </umaf:DeleteItemConnections.DriveItemArgument>
+                          </umaf:DeleteItemConnections>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <umaf:CreateFolderConnections BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID5}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" sap2010:Annotation.AnnotationText="Creates unique folder" AuthScopesInvalid="False" BrowserDriveId="b!cMySWs0JRUGP2XNMubKaMCbKbq-s5xZFhiWocV8XB0jl6OV0YJXcRYaBgT_Ue3uF" BrowserDriveName="Documents" BrowserItemFriendlyName="Job_Validation" BrowserItemId="01RG7CLXQUWXBZIWPN2ZD2S6T44ETECOFT" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation" ConflictResolution="Fail" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Create Unique Folder" sap:VirtualizedContainerService.HintSize="518,317" sap2010:WorkflowViewState.IdRef="CreateFolderConnections_1" ItemSelectionMode="Browse" NewFolderName="[in_dict_ParameterDict(&quot;EventID&quot;).ToString]" Result="[o365_EventFolder]" UseConnectionService="True">
+              <umaf:CreateFolderConnections.DriveItemArgument>
+                <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveId="b!cMySWs0JRUGP2XNMubKaMCbKbq-s5xZFhiWocV8XB0jl6OV0YJXcRYaBgT_Ue3uF" BrowserDriveName="Documents" BrowserItemFriendlyName="Job_Validation" BrowserItemId="01RG7CLXQUWXBZIWPN2ZD2S6T44ETECOFT" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" ItemSelectionMode="Browse" ParentFullPathHint="">
+                  <umafm:DriveItemArgument.ItemIdBackup>
+                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="Browse">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umafm:DriveItemArgument.ItemIdBackup>
+                </umafm:DriveItemArgument>
+              </umaf:CreateFolderConnections.DriveItemArgument>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umaf:CreateFolderConnections>
+            <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FirstResult="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID6}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" sap2010:Annotation.AnnotationText="Uploads 'OCR_[s_EventID].xlsx to unique folder" AuthScopesInvalid="False" BrowserDriveName="Documents" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation" ConflictResolution="Replace" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Upload OCR data file to Unique Folder " FilesInputMode="MultipleByBuilder" sap:VirtualizedContainerService.HintSize="518,257" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_1" Item="[o365_EventFolder]" ItemSelectionMode="UseExisting" UseConnectionService="True">
+              <umaf:UploadFilesConnections.DriveItemArgument>
+                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveName="Documents" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/Job_Validation" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" Item="[o365_EventFolder]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
+                  <umafm:DriveItemArgument.ItemIdBackup>
+                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID6" StoredValue="UseExisting">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                          <InArgument x:TypeArguments="x:String">01RG7CLXQUWXBZIWPN2ZD2S6T44ETECOFT</InArgument>
+                          <InArgument x:TypeArguments="x:String">Job_Validation</InArgument>
+                          <InArgument x:TypeArguments="x:String">b!cMySWs0JRUGP2XNMubKaMCbKbq-s5xZFhiWocV8XB0jl6OV0YJXcRYaBgT_Ue3uF</InArgument>
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umafm:DriveItemArgument.ItemIdBackup>
+                </umafm:DriveItemArgument>
+              </umaf:UploadFilesConnections.DriveItemArgument>
+              <umaf:UploadFilesConnections.FilesBackup>
+                <usau:BackupSlot x:TypeArguments="umafe:FilesInputMode" StoredValue="MultipleByBuilder">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:List x:TypeArguments="x:Object" x:Key="MultipleByVariable" Capacity="1">
+                      <x:Null />
+                    </scg:List>
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </umaf:UploadFilesConnections.FilesBackup>
+              <umaf:UploadFilesConnections.FilesList>
+                <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                  <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath("C:\Users\" &amp; in_dict_ParameterDict("User").ToString &amp; "\Downloads\SWE_OCR\Temp_Files\OCR_" &amp; in_dict_ParameterDict("EventID").ToString &amp; ".xlsx")]</InArgument>
+                </scg:List>
+              </umaf:UploadFilesConnections.FilesList>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </umaf:UploadFilesConnections>
+          </Sequence>
+          <ui:CommentOut DisplayName="Process OCR data and update relevant systems" sap:VirtualizedContainerService.HintSize="552,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Email Customer Service - Top 5 matches" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="dt_top5" />
+                    <Variable x:TypeArguments="x:String" Name="s_EmailBody" />
+                    <Variable x:TypeArguments="x:String" Name="s_InputAddress" />
+                    <Variable x:TypeArguments="x:String" Name="s_knr" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="dt_OCRexcel" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_top5]" DisplayName="Read Top5 Excel file" sap:VirtualizedContainerService.HintSize="552,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Top 5 Matches" WorkbookPath="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\Top_5_Matches_&quot; &amp; in_dict_ParameterDict(&quot;EventID&quot;).ToString &amp; &quot;.xlsx&quot;]" />
+                  <Assign DisplayName="Collect Input Address from top5 file" sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[s_InputAddress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[dt_top5.Rows(0)("Input Address").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign First text line to s_EmailBody" sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[s_EmailBody]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["&lt;p&gt;Hej&lt;/p&gt;&lt;p&gt;RPA-botten lyckades inte matcha kundens angivna leveransadress: &lt;p&gt;&lt;b&gt;&lt;i&gt;" &amp; s_InputAddress &amp; "&lt;/b&gt;&lt;/i&gt;&lt;p&gt;med vårt kundnummerregister i SAP, så validering krävs. Nedan finner du de fem bästa matchningarna samt en länk om ingen av dessa stämmer:&lt;/p&gt;"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_top5]" DisplayName="For Each Row in dt_top5" sap:VirtualizedContainerService.HintSize="552,590" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,394" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="s_MatchedAddress" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign Matched Address" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[s_MatchedAddress]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[CurrentRow.Field(Of String)("Matched Address")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Assign Knr" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[s_knr]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[CurrentRow.Field(Of Double)("Customer").ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Assign Link in email" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[s_EmailBody]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[s_EmailBody &amp; "&lt;a href='mailto:se.ibot@lyreco.com?subject=OCR_" &amp; in_dict_ParameterDict("EventID").ToString &amp; "&amp;body=knr:" &amp; s_knr &amp; "%0D%0ACaseID:" &amp; in_dict_ParameterDict("CaseID").ToString &amp; "'&gt;" &amp; s_MatchedAddress &amp; "&lt;/a&gt;" &amp; _
+" (Kundnummer: " &amp; s_knr &amp; ")&lt;br&gt;"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                  <Assign DisplayName="Assign Last link, None of the above" sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[s_EmailBody]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[s_EmailBody &amp; "&lt;a href='mailto:sibot@lyreco.com?subject=OCR_" &amp; in_dict_ParameterDict("EventID").ToString &amp; "&amp;body=No Match" &amp; "%0D%0ACaseID:" &amp; in_dict_ParameterDict("CaseID").ToString &amp; "'&gt;Ingen av ovanstående&lt;/a&gt;&lt;br&gt;"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Last text line to s_EmailBody" sap:VirtualizedContainerService.HintSize="552,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[s_EmailBody]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">[s_EmailBody &amp; "&lt;p&gt;Klicka på länken som motsvarar rätt leveransadress och skicka iväg mailet som poppar upp precis som det är.&lt;/p&gt;" &amp; _
+"&lt;p&gt;Länk original caset &lt;a href='https://lyreco.lightning.force.com/lightning/r/Case/" &amp; in_dict_ParameterDict("CaseID").ToString &amp; "/view'&gt;HÄR&lt;/a&gt;&lt;/p&gt;"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID7}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Bcc="[New String(){&quot;psvaerd@lyreco.com&quot;}]" Body="[s_EmailBody]" ConnectionId="ba61e230-c57d-4771-bbb2-d0b8ccaf29b8" DisplayName="Send Top5 Email" sap:VirtualizedContainerService.HintSize="552,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.High]" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Case &quot; &amp; in_dict_ParameterDict(&quot;CaseNumber&quot;).ToString &amp; &quot;, Validering krävs&quot;]" To="[in_Top5Reciever]" UseConnectionService="True" UseSharedMailbox="False">
+                    <umam:SendMailConnections.AttachmentsBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:SendMailConnections.AttachmentsBackup>
+                    <umam:SendMailConnections.InputTypeBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:SendMailConnections.InputTypeBackup>
+                    <umam:SendMailConnections.MailboxArg>
+                      <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                        <umamm:MailboxArgument.Backup>
+                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID7" StoredValue="NoMailbox">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umamm:MailboxArgument.Backup>
+                      </umamm:MailboxArgument>
+                    </umam:SendMailConnections.MailboxArg>
+                  </umam:SendMailConnections>
+                  <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACqVUbU/bMBD+K5E/h6yFThuV+oEExjIKjWjHJk0Iuc7RenHtzHY6MtT/vstbm0C0SZsqRfU9d+fn7h7fM/nAQcQmUNJSLkGT8TOZA9VsTZcCKpCMv927JJRpZveGZ3JDN0DGJKIapA1j4pJzblJB8w7ghOcFAoZpnlqu5AtkkaeFs7GayxWeD3eTsdUZtC2zFDS1Shf3kwlBTrdgUiXN3vcWfmRcQ9ycS7pTxWh9s6/inOzcPflAbTZIpTS/5N8YO9Rr4z+znoZXF+jPJX56K+hl7JKZDKjcUlO5tSoITZQtBTdr6JlAG+lOoIXUtSyVEkDlf4+gv+XoOMtsr4A+cfsQUAP1LF5VUWAOO4CdQg78P/OI2rUXSgsrpIjwHPSWM/DOmOVbbjkYb/7lQtrqb3D6/ngwOgkGZ6P29Q+BBmrB8zMZC/BeI67TF+nJjbX+6F2Sx5fDm6+XI/84uTldnAxd5w60QTaToTcofhifCZtpmEjIrKbCdcppsCvIFyoBOZGZEKTSMhhLxo9UGPh7o6v+YmBosKUl2riG5hofd5OgBe3ud8XDNpZKBvgsseMW6RZLoKaNiUvimBd3hASGw0emaM54ig0/MlSAeVSawZF5jBn61f3O68FcAq4VXgCVeKqkVTPxLZKiBMF/QdzENcpGqto6t8CUjp0jp9TBQSQBZajfqVJJlt5Rga1C1rvG7mv1E8NDC5vaHmm+oTpH7qV2cWGhJiPKErqCdq3DUbfYms18X2Yb7AQOvZO3RZXL74j9UcOVSws7lNXTI5d8tDa9BrtWODYSzeYLtBVqx9ObbviUylWGFSECxVu+pk8RHufYXzIeDgYDTEaNj4kT3FzBGt2LxtUSW8CT9YViSbnyd78BATNnUx0GAAA=" ConnectionId="1e33251d-7993-434f-9831-88982043c0a4" DisplayName="Insert Record - Case Comment" sap:VirtualizedContainerService.HintSize="552,266" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="7196c11a-8850-3802-8a07-e50b91ae81fb">
+                    <isactr:ConnectorActivity.FieldObjects>
+                      <isactr:FieldObject Name="ParentId" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String">[in_dict_ParameterDict("CaseID").ToString]</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="Jit_CaseComment" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <OutArgument x:TypeArguments="uiascb:CaseComment_Create" />
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="CommentBody" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Inväntar validering av kundnummer" &amp; Environment.NewLine &amp; _
+"Separat mail har skickats"]</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                    </isactr:ConnectorActivity.FieldObjects>
+                  </isactr:ConnectorActivity>
+                  <isactr:ConnectorActivity sap2010:Annotation.AnnotationText="Status: In-Progress&#xA;Sub-Status: Escalated to Advisor&#xA;" Configuration="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" ConnectionId="1e33251d-7993-434f-9831-88982043c0a4" DisplayName="Update Record Status &amp; Prio" sap:VirtualizedContainerService.HintSize="552,323" sap2010:WorkflowViewState.IdRef="ConnectorActivity_6" UiPathActivityTypeId="fcd26c82-9ff8-3d19-a449-a5814a778ae0">
+                    <isactr:ConnectorActivity.FieldObjects>
+                      <isactr:FieldObject Name="caseId" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String">[in_dict_ParameterDict("CaseID").ToString]</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="Jit_Case" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <OutArgument x:TypeArguments="uiascb1:Case_Update" />
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="Status" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String">In Progress</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="Sub_Status__c" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String">Escalated to Supervisor</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                      <isactr:FieldObject Name="Priority" Type="FieldArgument">
+                        <isactr:FieldObject.Value>
+                          <InArgument x:TypeArguments="x:String">High</InArgument>
+                        </isactr:FieldObject.Value>
+                      </isactr:FieldObject>
+                    </isactr:ConnectorActivity.FieldObjects>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </isactr:ConnectorActivity>
+                  <Sequence DisplayName="Upload pdf to Archive (eSupport requirement)" sap:VirtualizedContainerService.HintSize="552,1052" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sxl:XDocument" Name="xdoc" />
+                      <Variable x:TypeArguments="x:String" Name="xmlContent" />
+                      <Variable x:TypeArguments="x:String" Name="s_CustomerOrderId" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process EXCEL.EXE" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL.EXE" />
+                    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_OCRexcel]" DisplayName="Read Range Workbook - Archive" sap:VirtualizedContainerService.HintSize="434,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Header" WorkbookPath="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\OCR_&quot; &amp; in_dict_ParameterDict(&quot;EventID&quot;).ToString &amp; &quot;.xlsx&quot;]" />
+                    <Assign DisplayName="Assign CustomerOrder ID" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[s_CustomerOrderId]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_OCRexcel.Rows(0)("Purchase Order Number").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\&quot; &amp; s_CustomerOrderId &amp; &quot;.pdf&quot;]" DisplayName="Rename and Copy .PDF File" sap:VirtualizedContainerService.HintSize="434,223" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\pdf_&quot; &amp; in_dict_ParameterDict(&quot;EventID&quot;).ToString &amp; &quot;.pdf&quot;]" />
+                    <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FirstResult="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID8}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" BrowserDriveId="b!cMySWs0JRUGP2XNMubKaMCbKbq-s5xZFhiWocV8XB0jl6OV0YJXcRYaBgT_Ue3uF" BrowserDriveName="Documents" BrowserItemFriendlyName="RPA_OCR_Arkiv" BrowserItemId="01RG7CLXXHZGWMC4KF2VDK5HBXIPSCWD4H" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/RPA_OCR_Arkiv" ConflictResolution="Replace" ConnectionId="94215d1d-2359-40a9-af25-1524f11800d4" DisplayName="Upload .pdf to Sharepoint" FilesInputMode="MultipleByBuilder" sap:VirtualizedContainerService.HintSize="434,235" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_2" ItemSelectionMode="Browse" UseConnectionService="True">
+                      <umaf:UploadFilesConnections.DriveItemArgument>
+                        <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveId="b!cMySWs0JRUGP2XNMubKaMCbKbq-s5xZFhiWocV8XB0jl6OV0YJXcRYaBgT_Ue3uF" BrowserDriveName="Documents" BrowserItemFriendlyName="RPA_OCR_Arkiv" BrowserItemId="01RG7CLXXHZGWMC4KF2VDK5HBXIPSCWD4H" BrowserSiteUrl="https://lyreco.sharepoint.com/sites/lyrecoswedenrpa/Documents%20partages/OCR%20-%20Manual%20orders/RPA_OCR_Arkiv" ConnectionKey="94215d1d-2359-40a9-af25-1524f11800d4" ItemSelectionMode="Browse" ParentFullPathHint="">
+                          <umafm:DriveItemArgument.ItemIdBackup>
+                            <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID8" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </umafm:DriveItemArgument.ItemIdBackup>
+                        </umafm:DriveItemArgument>
+                      </umaf:UploadFilesConnections.DriveItemArgument>
+                      <umaf:UploadFilesConnections.FilesBackup>
+                        <usau:BackupSlot x:TypeArguments="umafe:FilesInputMode" StoredValue="MultipleByBuilder">
+                          <usau:BackupSlot.BackupValues>
+                            <scg:List x:TypeArguments="x:Object" x:Key="MultipleByVariable" Capacity="1">
+                              <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)">[s_PdfFileFullPath]</InArgument>
+                            </scg:List>
+                            <scg:List x:TypeArguments="x:Object" x:Key="MultipleByBuilder" Capacity="1">
+                              <x:Null />
+                            </scg:List>
+                          </usau:BackupSlot.BackupValues>
+                        </usau:BackupSlot>
+                      </umaf:UploadFilesConnections.FilesBackup>
+                      <umaf:UploadFilesConnections.FilesList>
+                        <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                          <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath("C:\Users\" &amp; in_dict_ParameterDict("User").ToString &amp; "\Downloads\SWE_OCR\Temp_Files\" &amp; s_CustomerOrderId &amp; ".pdf")]</InArgument>
+                        </scg:List>
+                      </umaf:UploadFilesConnections.FilesList>
+                    </umaf:UploadFilesConnections>
+                    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="434,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\&quot; &amp; s_CustomerOrderId &amp; &quot;.pdf&quot;]" />
+                  </Sequence>
+                  <Sequence DisplayName="Delete files in Temp_Files Folder" sap:VirtualizedContainerService.HintSize="552,1043" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEachFileX sap2010:Annotation.AnnotationText="Deletes all files ascociated with the eventID" DisplayName="For Each File in Temp_Files Folder" Folder="[&quot;C:\Users\&quot; &amp; in_dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files&quot;]" sap:VirtualizedContainerService.HintSize="518,960" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                      <ui:ForEachFileX.Body>
+                        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,646" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[CurrentFile.ToString.Contains(in_dict_ParameterDict(&quot;EventID&quot;).ToString)]" DisplayName="If File name contains EventID" sap:VirtualizedContainerService.HintSize="450,586" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,336" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:DeleteFileX DisplayName="Delete Temp File" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[CurrentFile.FullName]" />
+                                  <ui:LogMessage DisplayName="Log Delete File Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[$&quot;Deleted {CurrentFile.FullName}&quot;]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachFileX.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEachFileX>
+                  </Sequence>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Assign DisplayName="Assign io_bool_ValidationNeeded" sap:VirtualizedContainerService.HintSize="552,105" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[io_bool_ValidationNeeded]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="586,407" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_dict_ParameterDict("StepName")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">["Customer Number Validation process"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_dict_ParameterDict("exception")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">[New Exception($"OCR Excel file OCR_{in_dict_ParameterDict("EventID").ToString}.xlsx not found")]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExceptionHandling - Invoke Workflow File (ExceptionHandling.xaml)" sap:VirtualizedContainerService.HintSize="479,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExceptionHandling.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="dict_ParameterDict">[in_dict_ParameterDict]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

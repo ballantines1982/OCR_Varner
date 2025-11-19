@@ -1,0 +1,84 @@
+{
+  "name": "Varner_OCR",
+  "projectId": "3c5fedb1-1c7a-42fc-b054-fda74e63477b",
+  "description": "Varner OCR reading",
+  "main": "Main.xaml",
+  "dependencies": {
+    "psvaerd_lib": "[1.0.3]",
+    "UiPath.DataService.Activities": "[25.2.0]",
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.31.1]",
+    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.FTP.Activities": "[2.4.0]",
+    "UiPath.IntegrationService.Activities": "[1.18.0]",
+    "UiPath.IntelligentOCR.Activities": "[6.22.0]",
+    "UiPath.Mail.Activities": "[2.0.10]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.0.10]",
+    "UiPath.Salesforce.Activities": "[1.9.8]",
+    "UiPath.Salesforce.IntegrationService.Activities": "[6.1.2]",
+    "UiPath.System.Activities": "25.10.0",
+    "UiPath.Testing.Activities": "[24.10.4]",
+    "UiPath.UIAutomation.Activities": "[24.10.11]",
+    "UiPath.WebAPI.Activities": "[1.20.1]",
+    "UiPath.Word.Activities": "[1.20.2]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "DefaultTenant",
+      "namespace": "Svevia_OCR",
+      "uniqueReference": "YB8+2D66OM2wA5i4B/Aj/rOpXYl+4pxK4kxJCQT2qfU="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.10.7.0",
+  "projectVersion": "1.0.106",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": [
+        "Temp_Files/pdf_svevia.pdf",
+        "Temp_Files/html_svevia.html",
+        "Temp_Files/excel_svevia.xlsx"
+      ]
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "0a14352c-fccf-4fb3-9561-d8751aabc1ab",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

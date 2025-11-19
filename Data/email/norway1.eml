@@ -1,0 +1,406 @@
+Received: from DU4PR02MB11525.eurprd02.prod.outlook.com (2603:10a6:10:624::15)
+ by AS8PR02MB7668.eurprd02.prod.outlook.com with HTTPS; Mon, 13 Oct 2025
+ 09:32:23 +0000
+Received: from AM5PR1001CA0013.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:206:2::26)
+ by DU4PR02MB11525.eurprd02.prod.outlook.com (2603:10a6:10:624::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.12; Mon, 13 Oct
+ 2025 09:32:21 +0000
+Received: from AM1PEPF000252DA.eurprd07.prod.outlook.com
+ (2603:10a6:206:2:cafe::e2) by AM5PR1001CA0013.outlook.office365.com
+ (2603:10a6:206:2::26) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9203.13 via Frontend Transport; Mon,
+ 13 Oct 2025 09:32:23 +0000
+Authentication-Results: spf=fail (sender IP is 185.132.180.206)
+ smtp.mailfrom=em2221.mysupplies.varner.no; dkim=fail (body hash did not
+ verify) header.d=mysupplies.varner.no;dmarc=fail action=quarantine
+ header.from=mysupplies.varner.no;compauth=none reason=451
+Received-SPF: Fail (protection.outlook.com: domain of
+ em2221.mysupplies.varner.no does not designate 185.132.180.206 as permitted
+ sender) receiver=protection.outlook.com; client-ip=185.132.180.206;
+ helo=mx07-0032ca01.pphosted.com;
+Received: from mx07-0032ca01.pphosted.com (185.132.180.206) by
+ AM1PEPF000252DA.mail.protection.outlook.com (10.167.16.52) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9228.7
+ via Frontend Transport; Mon, 13 Oct 2025 09:32:20 +0000
+Received: from pps.filterd (m0157090.ppops.net [127.0.0.1])
+	by mx07-0032ca01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59D9OVVM2029857
+	for <se.order@lyreco.com>; Mon, 13 Oct 2025 11:32:20 +0200
+Authentication-Results-Original: ppops.net;	spf=pass
+ smtp.mailfrom=bounces+10688221-ea36-se.order=lyreco.com@em2221.mysupplies.varner.no;
+	dkim=pass header.d=mysupplies.varner.no header.s=s1;	dmarc=pass
+ header.from=mysupplies.varner.no
+Received: from o1.ptr9823.orders.varner.com (o1.ptr9823.orders.varner.com [149.72.148.155])
+	by mx07-0032ca01.pphosted.com (PPS) with ESMTPS id 49qfnk2wnv-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <se.order@lyreco.com>; Mon, 13 Oct 2025 11:32:19 +0200 (MEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysupplies.varner.no;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	reply-to:to:cc:content-type:date:from:subject:to;
+	s=s1; bh=LsO7bnrY/EkGHOgg96UfROThRCB3i+YWenRnjJY0vyk=;
+	b=a1AgZWTuXP+rUyMvfYH4OeNLPp4Nt7xyVF5kosAkOoFYNvu+hGhKPIS0ShWQmjC3fhm4
+	gArmi+deug+udKaQnYumxQTbHIMsNcvK+Ne9DCqFLVV4GQIsgIA9VMh47FpN50pdZaP24a
+	SQC+KjHjsDJCGMIiV8a3M50BcyuzltBF0YISL3s9ulkoACirfsS1j0uaHIZKBOtGGRlLoQ
+	5AB22H8tiY3jbpYfosolEm4aw+GmD44Lmi5BNKN0KxWzoSCVLcHrrDDz3hDm4ePTy9LTOC
+	FUFvXQUV9nvmTyH+8jOQDi/XrBFsixoQgbOU1aVixWZS8loqOGY3D6t+SNbTjJdg==
+Received: by recvd-79cc5f8dff-8f77t with SMTP id recvd-79cc5f8dff-8f77t-1-68ECC722-75
+	2025-10-13 09:32:18.793908906 +0000 UTC m=+11292447.687122623
+Received: from MTA2ODgyMjE (unknown)
+	by geopod-ismtpd-6 (SG) with HTTP
+	id gMLn8R89T-2Huuknk2g2PQ
+	Mon, 13 Oct 2025 09:32:18.738 +0000 (UTC)
+Date: Mon, 13 Oct 2025 09:32:18 +0000 (UTC)
+From: Varner MySupplies <195@mysupplies.varner.no>
+Message-ID: <gMLn8R89T-2Huuknk2g2PQ@geopod-ismtpd-6>
+Subject: Varner MySupplies: New Order From 195 195 Dressmann, Tasta
+Reply-To: Varner MySupplies <no284999@varnerstore.com>
+X-SG-EID: =?us-ascii?Q?u001=2Ew04+A+RnCHiH402TFf8LrRXqg3OhOqP7JmaEPvOI1k7YeMaIItwZOWnZs?=
+ =?us-ascii?Q?f+wS5UGG7eaduTWu6WCybgyvOHJ1zucbJrTDxKT?=
+ =?us-ascii?Q?TKz1Z60=2FSYvME4KhVbj5ntKe912fbTfKtwwPRle?=
+ =?us-ascii?Q?skXAuwI4bYBuG+UuL31DUCDIoDnTvPJUwSX8JvO?=
+ =?us-ascii?Q?GUUn5f8kBmFkh0l1U4m0fRvwOaV37m8Osz3J3cA?=
+ =?us-ascii?Q?7pUMC0bs61uENrHLHscC3GVjFmOILxFbwwdcq1E?= =?us-ascii?Q?ZtAa?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BvOzH9DzmBoXN1iteSKz1TtLRUloF5cSnsRub?=
+ =?us-ascii?Q?e9H0CJ6ujPKUXfwBr2OImLOvYw9bQ=3D=3D?=
+To: Lyreco Sverige <SE.order@lyreco.com>
+X-Entity-ID: u001.n52g787nYtVrDbRVwqDv2A==
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDEzMDA0NiBTYWx0ZWRfX4Hz0adCg2Wmx
+ QJNIAnI452qetJhZ5+x+3i5WktyiFvGox8qjzwX6hFsCq+ScisCzGbbj6EAtUOgLqfVzDBrpZFw
+ 4geBGU3F5K1YSs662Y50HLbSDo2IKRE6AZdCz3fJGYbBPAYiu880ECIni718W1CkT49v+8vHmhT
+ q4M0KPK41UsmuxbRgpx0UYnBQbksLZltFIknbdlRXjp3PRnHgkNLwRyRi+cgPSL9jUsZsoh8t5B
+ 0rx2mvauJUXQlS8xTb8CUp+5FnD6T2bYGFZ3S7oAMbBitzHtPQospi3VEnOn5EacKc8e2idYL60
+ xszg/vadd2aJQipQpiz8DPbTl7liNkuapXafFOuyltMeg5Ta2RHoDWxs4irUMlFoKkvvXvpcBAw
+ 4UeEp4nUxn7N5/o6iZ8gm4IeVCYNGqrFdCLTzqoilQkKlPsArztaf8E5KAEeBK2IPRjXsESGlju
+ WDSVgSibZKe+IXVfr5A==
+X-CLX-Shades: Deliver
+X-Authority-Analysis: v=2.4 cv=FYQ6BZ+6 c=1 sm=1 tr=0 ts=68ecc723 b=1 cx=c_pps
+ a=7Ew3zyrGLT9RMiZlHqiwSg==:117 a=7Ew3zyrGLT9RMiZlHqiwSg==:17
+ a=kj9zAlcOel0A:10 a=x6icFKpwvdMA:10 a=-OPqiW0-k88A:10 a=9uEqCyOpAAAA:8
+ a=cnWkqWuvAAAA:8 a=ahJSAQYA03a2BvjiG1AA:9 a=APkVYTaCr1ArSeV2:21
+ a=_W_S_7VecoQA:10 a=CjuIK1q_8ugA:10 a=pnI2m26_WTs5bHz79ivh:22
+ a=6echl_FrlDlslMgcHnmX:22 a=RvqoewNMXoAkO0T6LPrZ:22 a=r87b3DECw_Ht_DIp6SIn:22
+ a=nKkFSiEbYKIpaBOkqhVu:22
+X-Proofpoint-GUID: tcmZ-Ss6t7k9dDbjAT61v0Y2bm68Blmw
+X-Proofpoint-ORIG-GUID: tcmZ-Ss6t7k9dDbjAT61v0Y2bm68Blmw
+X-CLX-Response: 1TFkXGxoaGhEKTHoXGxoaGhEKWUQXbHJETGl8ZHNaXGYRClhYF2Ubf18abll
+ meV9CEQp4Thdub0V7cFt7fVBBUhEKeEsXZRt/XxpuWWZ5X0IRCnhMF2tbRx1mQ1lZfUliEQp5TB
+ drW0cdZkNZWX1JYhEKQ0gXBxgeHhEKQ1kXBxkcHxEKQ0kXGgQaGhoRCllNF25PRkNcT1gRCl9ZF
+ xsTGxEKX00XZ2ZyEQpZSRcacRoQGncGGx0bcRsaGxAadwYYGgYaEQpZXhdsbHkRCklGF0ZTWE9J
+ RXVCRVleT04RCklHF3hPTREKQ04XXklHcAd5WRxeHUETTm5IQGt+HBtcGnMYSEccEmhGR10RClh
+ cFx8EGgQeGxoFGxoEHRoEGxkeBBkfEBseGh8aEQpeWRdNY0dfBREKTVwXGRgdEQpMWhd7bXtNax
+ EKRVkXaGtrEQpMXxd6BQUFBQUFBQUFHREKTEYXb2trY2trEQpCTxdjXRlSX0kTZ39DZxEKQ1oXG
+ x4TBB0YBBseEgQbHx8RCkJeFxsRCkJcFxsRCkJLF29vRllNaR4bTk5iEQpCSRdlWRJ9bkZZfllQ
+ YREKQkUXaWxEE2xwfUhifx4RCkJOF2VZEn1uRll+WVBhEQpCTBdiWxwaWmFjQm5NGhEKQmwXY1p
+ Bek9FWFlGGU8RCkJAF2xoSUJEem1lTWNCEQpCWBdubVBASEkFGGdechEKWlgXHhEKeUMXZngSBX
+ 0dH3xHZHIRCllLFxMfHxEKWksXGBoZHxwRCnBnF2F7GURAUFgFaBtzEB0aEQpwaBdoaV5ZG0Vde
+ nN+cBAbGB8RCnBoF2AFHx5/UhNZYlN5EB0eEQpwaBdnQmZje11QYR9zRBAZGhEKcGgXekx5GGRr
+ bV9wU2YQHRkRCnBoF2RHThxgSx16SF5BEBkaEQpwaBdrGGdFQBJ5RWhSBRAZGhEKcGgXbxxnXRl
+ sU3xYeB8QGRoRCnBoF2l/YBsYZl1dSUNlEBkaEQpwZxdnU15kH1JOTn1LXBAeEhEKcH0XZUdGaE
+ ROQB1QSVIQGRoRCnB/F2J6fGdubkJtSEtjEB0cEQpwXxdnUlhCBRpNeEhEHhATHxEKcGwXbl5DS
+ B1oe1l9aHwQEx8RCnBMF2BpWE9jZUAFbUsSEBIfEQptfhcaEQpYTRdLESA=
+X-Proofpoint-Banner-Trigger: inbound
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-K4b3a7f7p6a: true
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-13_03,2025-10-06_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0
+ malwarescore=0 clxscore=1000 impostorscore=0 bulkscore=0 spamscore=0
+ lowpriorityscore=0 adultscore=0 suspectscore=0 priorityscore=1000
+ phishscore=0 classifier=customer_allow authscore=0 authtc= authcc=
+ route=inbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510020000
+ definitions=main-2510130046 domainage_hfrom=955 domainage_replyto=20356
+Return-Path: bounces+10688221-ea36-se.order=lyreco.com@em2221.mysupplies.varner.no
+X-MS-Exchange-Organization-ExpirationStartTime: 13 Oct 2025 09:32:20.6935
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: b4929214-158d-4189-ff56-08de0a3b6891
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM1PEPF000252DA:EE_|DU4PR02MB11525:EE_|AS8PR02MB7668:EE_
+X-MS-Exchange-Organization-AuthSource: AM1PEPF000252DA.eurprd07.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: b4929214-158d-4189-ff56-08de0a3b6891
+X-LD-Processed: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea,ExtFwd
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|69100299015|5073199012|29132699027|82310400026|4076899003|8096899003;
+X-Forefront-Antispam-Report: CIP:185.132.180.206;CTRY:GB;LANG:en;SCL:-1;SRV:;IPV:CAL;SFV:SKN;H:mx07-0032ca01.pphosted.com;PTR:mx07-0032ca01.pphosted.com;CAT:NONE;SFS:(13230040)(69100299015)(5073199012)(29132699027)(82310400026)(4076899003)(8096899003);DIR:INB;
+X-MS-Exchange-ForwardingLoop: ForwardingHandled;085ec1c2-f3b9-406a-b64f-b7af1643f3ea
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2025 09:32:20.6130
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b4929214-158d-4189-ff56-08de0a3b6891
+X-MS-Exchange-CrossTenant-Id: 085ec1c2-f3b9-406a-b64f-b7af1643f3ea
+X-MS-Exchange-CrossTenant-AuthSource: AM1PEPF000252DA.eurprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR02MB11525
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.7358207
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9203.007
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4717077)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?Y0c4MU4rcDczbEtPbGxYb1RXcER3SStYWWhrajVacHlZdlAyOW50Uk1Xckhq?=
+ =?utf-8?B?a2EyN2daQzZuaHM0Q091RURQM0VOWVFhbXgzVnVHUzFKUkUwUGVsc1c3dkdS?=
+ =?utf-8?B?MXozWFVQY3dNRlBzU0QvdUlMT2tWcG9ZK3BVWWREdTMwR0J1d2pYTnR0MThz?=
+ =?utf-8?B?NnJ6TEhwMzRtTUg5SzFmTHBicVdBYm56blFkbGk2WTFieGtBR3hnOUlIaU5o?=
+ =?utf-8?B?K1hUQXlxaFByUGdXekpqOVhkQ2taWnJLM2dmdjAzU0lUTXVxYUVvMDE1N3Q2?=
+ =?utf-8?B?YnZrOU1IWDMwUWsvVTU4MVc2dlNHUTR5aDN4ZCtMUURvUmNlbWM1TzNueHJu?=
+ =?utf-8?B?dXpRSkJLQzNuSS9seFJNbGd6VE5ZQVFTUUMxcUZCNlVOb0JnYzNMeG9GUDcw?=
+ =?utf-8?B?eVl0NXZMQWNXOE5mMVBpUkw2dWR4QXM0Q1FPMDNwRi8rdmF5TGp3NG03YVJh?=
+ =?utf-8?B?ai9zN1lsY1NxVFZXdGkxRjVaMG5mcE5vQXgxbDdCNGcwVGM4NkV5eFBQTXU3?=
+ =?utf-8?B?MUxuNEhEVktLNGZYZUsyUUJiSmEwNENyN2tObldlV3J4OFZQR0NLUkV4c3Bx?=
+ =?utf-8?B?ZWVrRFlwZW9ySmJHTEM0ajI1U3Nzc3FRcHpWU3pDbG9IN1NZemVUdHo2TWN1?=
+ =?utf-8?B?K3ptc3laWG5RNnMrd0ZzdVZFKzVDTjFnRTJEYW0yVEsrb3doWnRnR3JuNk5w?=
+ =?utf-8?B?VlNQYWozVCtSaFRMT21zSFMyaTVmN21UK2M1bk1NcEFib3ZFeG92WjhyNk9U?=
+ =?utf-8?B?cmFlUVk4WXlDVjBqUDFXMERSNCtTRGRYVzEzT21hOU9WdjhZUFpmbG1WQXo1?=
+ =?utf-8?B?SWwyRXAyZWErRFlWSlNFRmdtbDZQK1RpSUdXU0RHSFhQV3hFVGQweVdOOUFH?=
+ =?utf-8?B?TWRKZ2ZKWGYxY1BnZEtnSnNuQXVlK0ZoSXlRbDdnVDJ6N0VuS0FvU2Z2MWpL?=
+ =?utf-8?B?cDV5RmZyYXB1ekVuaCt6OGRwVUVsRkFYMFo1dUk4aVN4ZnhkbmdPckV0ZnI4?=
+ =?utf-8?B?TVkyVEVKRW9OZTNNYUlIaFBlK1MxN2h5M3NRbVM2Y0lVU2xzVnVtZW1uZUFI?=
+ =?utf-8?B?MnRzL0xhdmc4eGJoa0FnY3lJMm51bmJhb3FQbUM5U0g4dWpPWnFIN1BwTXVj?=
+ =?utf-8?B?OFdCS2N6VjgxWkdKVDQ0c0tERE8yMkdidFJCZ3RYMzdKQmt0RGlKV0dVRlRD?=
+ =?utf-8?B?cElGZUtwZC9lYTRweDJNc3VWbndUVGQ4SW9KcTU4OHpQSkMzemNPb1ZIMTlJ?=
+ =?utf-8?B?Y2FSSDN3aHliejI3NjkvT1dxZ2hlN0JyaUhuUk15cDZtaFYycUljWm80Yk05?=
+ =?utf-8?B?RDlyRmQ0RGs0S2k0NkVXcEhMTkcxVm8rRmJFN1NGMWcvWEVZOWdTWEJpR20r?=
+ =?utf-8?B?dDFvOFVwQ2hCOTJwWEMxOEtieE53UmdpMTVqeWxLVFMwZE9GRlNYOEt1VStG?=
+ =?utf-8?B?eXNucitNM09rdXZJeU1HZG5ZRktZMDlYeS9vNHo4QXBVVlpGaU5SRVBTKzRh?=
+ =?utf-8?B?eklhQzV1elZEajV2c3ZNRXlJU1hTaFErdld4d04vNFRuR3hENGpvSEd5VzFU?=
+ =?utf-8?B?YTk1M1UwMDVtbW5wY21RcndkZHF4K2MvWUlzaTFTV1l0RGFhaHluZnFxNzF4?=
+ =?utf-8?B?NWhGRG9PRGxMOWhPQ3R2V3NPZTRKMlUwd1lTWWs5NFdPRDBzMTB5Z1NJTXBI?=
+ =?utf-8?B?M01GNlp6aERGZFgweVBXNmVPMkxsd2FDNk9uUHlwUEx3UjlUSXJaWkhoMUZz?=
+ =?utf-8?B?U0hTcmdYOWxTa2FpYno4L096cDJDVEljMGt0YmZkY0p2T08yUHFsZGZPL0sw?=
+ =?utf-8?B?VXlDNzlrNDAzSXE3eElOMWIwQW1yaDNQTCtMLzV4OHRZckkrcWp6ZlRJKzEz?=
+ =?utf-8?B?YkZQWVRBZ1BOd0t5ZHVnenBFZ0taUUp6Y0gyaWpyNm9JS1V2Z3JHOFdsdDZX?=
+ =?utf-8?B?UGhFNXBFeEpvTE5CWGs4YTR3Z0NHSmVvWngvTlFWeDd3WG9tVXhIaHROZFcz?=
+ =?utf-8?B?UjBKblNPZ1J3amhXVFhNWWU2bFk0ek1yUTNvR0EvS3BPSDNUWTdWZHRqVmox?=
+ =?utf-8?B?dzdCYktSR1poOVE2STJVKytHeU8zOW1TUnk0ZXRmZUZERTZMWTdqdnlSMzVD?=
+ =?utf-8?B?WUo0Q3Jpa2s5bTZ3N3lDUlExamFLeGh3UDV5ZWJBNW9LcG9rdUNxQUdzcTJl?=
+ =?utf-8?B?Ykw0blR6SzAxbFRGMUNpMC8yTnV0R1FlWW9hYjZGL2dCVWRPaFBLZ0pxSW9x?=
+ =?utf-8?B?WnhIQ3F3amd3OFkxdjdUL1RHSURoeWVpYWp0a1UyYkRXQWJZa2V3RHJOaHpH?=
+ =?utf-8?B?bGN5ZGtxLzZHOFFrczhCdkU2NWV1cWVscXVBSFh1eGgra0R0WnprWEkxc0hP?=
+ =?utf-8?B?TGF4c1Y2VWtEV3BqUWNvZ2RycWdhY1N5NitkNkFLc3hET05IRzk2enJUUWgr?=
+ =?utf-8?B?QW5COWwxL2JmdzVkbkgrMmRwd1o0TXYzMzNFZXJGVzRZeW80S1FGSndsb09y?=
+ =?utf-8?B?WXVaT05JM0pHSSthVko4dlo2OVUvMG9qMzZOQUMyZG8wMklXYTg3YkVXZEx3?=
+ =?utf-8?B?MEpaVDloTHFoQllSY081OWRpaWwyZ3pRWWJJVG5PM2ZoajR6R3A3YTN1YmdN?=
+ =?utf-8?B?bXM1YU9UcmZVVm04YzJ6NkxVWWRyTmovQi8wUG1tWFhObjRRcHZMUWw0cFpR?=
+ =?utf-8?B?UmUwUnFTMFFYQ1RnckZMR2NIT25OVklLKzVLU1BWblNxcmg0dEZkWlAxT1Bt?=
+ =?utf-8?B?SlVPU21QUmJPd1NDUkZEMGYzcFNUdHpBVG5ta0U1YzlGMHhRblBnQ1UzSkRQ?=
+ =?utf-8?B?OWFoUzBhRjMxV2orOS9WNVloMVJmbjEvL0djemYreGRTWmZCZW1XamJIVHZM?=
+ =?utf-8?B?MmdUQnJOTGlWUW44SlJNdlc1alR2RTErMG1zbGxIM2tUMWY4eTEvUS9UaGdQ?=
+ =?utf-8?B?aXJTTlFDcUpnWWsxRENkZ0dRNzkwQlF5SWRpTWM4MGhBemcybjZ4SWN3cVda?=
+ =?utf-8?B?QkZxM01oZFNuNExtUW95dXNxQk5xZ0doNmtiWHlNVzZhYWhWTXNMRWFUUzJL?=
+ =?utf-8?B?SFVPcXNBWC93VnFxTjJQcWRiTjR4aE1ERHZNdmZhY3hWMjY5M1FLYytnbTRt?=
+ =?utf-8?B?emxYZUsraFpWMjUxWTc3NzVOYjFGVGcrbW9qT0hsK1Z1VFg5Wk1zenlzelZ1?=
+ =?utf-8?B?ZkFYVWtpYytrYlM1UnFhcHlBdUVaSUVmNVNVd1NRMWgwK2VmTVBxZWQzdmU5?=
+ =?utf-8?B?U2F1YllqR2xLNUd0dXlZVXBFc29Pc2tZeVAyZWE1K2paZll4aUN6eUFkbjBI?=
+ =?utf-8?B?T0tQZVM4aXJIUEdMYkhhKytnK0RjYkxBPT0=?=
+MIME-Version: 1.0
+
+<!DOCTYPE html><!-- BaNnErBlUrFlE-BoDy-start --><!-- Preheader Text : BEGIN=
+ --><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-as=
+cii"><div style=3D"display:none !important;display:none;visibility:hidden;m=
+so-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;opac=
+ity:0;overflow:hidden;">
+New order from 195 195 Dressmann, Tasta Order Number: 42935 Products: Artic=
+le number Name Units per pack Number Of Packs ordered 1521302 Torkrulle KAT=
+RIN Plus 1-L S 110m 1 1 Store Info: Store Number 195 Name 195 Dressmann, Ta=
+sta Email 195@&#8202;dressmann.&#8202;com</div>
+<!-- Preheader Text : END -->
+
+<!-- Email Banner : BEGIN -->
+<div style=3D"display:none !important;display:none;visibility:hidden;mso-hi=
+de:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;opacity:0=
+;overflow:hidden;">ZjQcmQRYFpfptBannerStart</div>
+
+<!--[if ((ie)|(mso))]>
+  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" st=
+yle=3D"padding: 0px 0px 10px 0px; direction: ltr" lang=3D"en"><tr><td>
+    <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"paddin=
+g: 0px 8px 6px 8px; width: 100%; border-radius:4px; border-top:4px solid #c=
+6c693;background-color:#eeed24;"><tr><td valign=3D"top">
+      <table align=3D"left" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D"padding: 0px 8px 4px 8px; font-size: 12px; line-height: 16px">
+	<tr><td style=3D"color:#000000; font-family: 'Arial', sans-serif; font-wei=
+ght:bold; font-size:14px; line-height: 20px; direction: ltr">
+	  This Message Is From an External Sender
+	</td></tr>
+	<tr><td style=3D"color:#000000; font-weight:normal; font-family: 'Arial', =
+sans-serif; font-size:12px; direction: ltr">
+          This message came from outside your organization.
+	</td></tr>
+
+      </table>
+
+    </td></tr></table>
+  </td></tr></table>
+<![endif]-->
+
+<![if !((ie)|(mso))]>
+  <div dir=3D"ltr" lang=3D"en" id=3D"pfptBanneriezp2uk" style=3D"all: rever=
+t !important; display:block !important; text-align: left !important; margin=
+: 0 0 10px 0 !important; padding:7px 16px 8px 16px !important; border-radiu=
+s: 4px !important; min-width: 200px !important; background-color: #eeed24 !=
+important; background-color: #eeed24; border-top: 4px solid #c6c693 !import=
+ant; border-top: 4px solid #c6c693;">
+    <div id=3D"pfptBanneriezp2uk" style=3D"all: unset !important; float:lef=
+t !important; display:block !important; margin: 1px 0 1px 0 !important; max=
+-width: 600px !important;">
+      <div id=3D"pfptBanneriezp2uk" style=3D"all: unset !important; display=
+:block !important; visibility: visible !important; background-color: #eeed2=
+4 !important; color:#000000 !important; color:#000000; font-family: 'Arial'=
+, sans-serif !important; font-family: 'Arial', sans-serif; font-weight:bold=
+ !important; font-weight:bold; font-size:14px !important; line-height:1.29 =
+!important; line-height:1.29">
+	This Message Is From an External Sender
+      </div>
+      <div id=3D"pfptBanneriezp2uk" style=3D"all: unset !important; display=
+:block !important; visibility: visible !important; background-color: #eeed2=
+4 !important; color:#000000 !important; color:#000000; font-weight:normal; =
+font-family: 'Arial', sans-serif !important; font-family: 'Arial', sans-ser=
+if; font-size:12px !important; line-height:1.5 !important; line-height:1.5;=
+ margin-top:2px !important;">
+This message came from outside your organization.
+      </div>
+
+    </div>
+
+    <div style=3D"clear: both !important; display: block !important; visibi=
+lity: hidden !important; line-height: 0 !important; font-size: 0.01px !impo=
+rtant; height: 0px">&nbsp;</div>
+  </div>
+<![endif]>
+
+<div style=3D"display:none !important;display:none;visibility:hidden;mso-hi=
+de:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;opacity:0=
+;overflow:hidden;">ZjQcmQRYFpfptBannerEnd</div>
+<!-- Email Banner : END -->
+
+<!-- BaNnErBlUrFlE-BoDy-end -->
+<html lang=3D"en">
+<head><!-- BaNnErBlUrFlE-HeAdEr-start -->
+<style>
+  #pfptBanneriezp2uk { all: revert !important; display: block !important;
+    visibility: visible !important; opacity: 1 !important;
+    background-color: #eeed24 !important;
+    max-width: none !important; max-height: none !important }
+  .pfptPrimaryButtoniezp2uk:hover, .pfptPrimaryButtoniezp2uk:focus {
+    background-color: #dad976 !important; }
+  .pfptPrimaryButtoniezp2uk:active {
+    background-color: #c6c693 !important; }
+  html:root, html:root>body { all: revert !important; display: block !impor=
+tant;
+    visibility: visible !important; opacity: 1 !important; }
+</style>
+
+<!-- BaNnErBlUrFlE-HeAdEr-end -->
+
+   =20
+    <style>
+
+        .orders {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+            .orders td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+        .shopInfo {
+            width: 100%
+        }
+    </style>
+    <title>New Order From 195 195 Dressmann, Tasta</title>
+</head>
+<body style=3D"font-family: sans-serif;">
+    <h2>New order from  195 195 Dressmann, Tasta</h2>
+
+    <h3>Order Number: 42935</h3>
+    <h4>Products:</h4>
+
+
+    <table class=3D"orders">
+        <tr>
+            <th>Article number</th>
+            <th>Name</th>
+            <th>Units per pack</th>
+            <th>Number Of Packs ordered</th>
+        </tr>
+        <tr>
+    <td>1521302</td>
+    <td>Torkrulle KATRIN Plus 1-L S 110m</td>
+    <td>1</td>
+    <td>1</td>
+</tr>
+
+    </table>
+
+    <h4>Store Info:</h4>
+    <div>
+
+        <table class=3D"shopInfo">
+            <tr>
+                <td>Store Number</td>
+                <td>195</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>195 Dressmann, Tasta</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>195@dressmann.com</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Norway</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>Tastatunet 1-3</td>
+            </tr>
+            <tr>
+                <td>Postal Code</td>
+                <td>4027</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>STAVANGER</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Norway</td>
+            </tr>
+
+
+        </table>
+
+    </div>
+
+    <h4>Products are delivered to:</h4>
+    Tastatunet 1-3, 4027 STAVANGER, Norway
+
+<img src=3D"https://u10688221.ct.sendgrid.net/wf/open?upn=3Du001.O4biw6hP91=
+QzeWDXwiGs47-2Bzj146TnmswQJgZaLYu4CAD9tMR9URVQUobP12DbAdUr0N0-2BwN3khi37Px-=
+2B3dxlB1VcfjvrZZJsyaCe3oxWffh8nGR4mDYC75EoT2XoaNBZ-2B8Be1TY2lym816OEVwt-2B1=
+ANuo2AMgHGvX8vQXfY1hAQkjWMn-2F6nVDwDRhQeZ8AgNTFG-2FUa0tjHaEQiW-2BM9-2FJrcmp=
+Tg-2BvyOQ4S2zYBJ55xOmfa2v5Yb6EVyjQOBMjuz0" alt=3D"" width=3D"1" height=3D"1=
+" border=3D"0" style=3D"height:1px !important;width:1px !important;border-w=
+idth:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin=
+-right:0 !important;margin-left:0 !important;padding-top:0 !important;paddi=
+ng-bottom:0 !important;padding-right:0 !important;padding-left:0 !important=
+;"></body>
+</html>
