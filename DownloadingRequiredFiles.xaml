@@ -209,7 +209,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Downloading related files" sap:VirtualizedContainerService.HintSize="1062,1416" sap2010:WorkflowViewState.IdRef="Sequence_203">
+  <Sequence DisplayName="Downloading related files" sap:VirtualizedContainerService.HintSize="3177,1416" sap2010:WorkflowViewState.IdRef="Sequence_203">
     <Sequence.Variables>
       <Variable x:TypeArguments="umfm:O365DriveLocalItem" Name="o365di_ReqFile" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dict_Sharepoint_Files" />
