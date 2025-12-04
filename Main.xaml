@@ -310,9 +310,10 @@
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1116,12738" sap2010:WorkflowViewState.IdRef="Sequence_91">
+  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="3356,14612" sap2010:WorkflowViewState.IdRef="Sequence_91">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String,Object)]" Name="dict_ParameterDict" />
       <Variable x:TypeArguments="x:String" Default="[Environment.UserName]" Name="s_User" />
@@ -333,7 +334,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="Sequence_161">
+    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,130" sap2010:WorkflowViewState.IdRef="Sequence_161">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -378,10 +379,10 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,129" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,713" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -410,10 +411,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -421,7 +422,12 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="536,407" sap2010:WorkflowViewState.IdRef="Sequence_92">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="513,407" sap2010:WorkflowViewState.IdRef="Sequence_92">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -432,7 +438,7 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("Exception")]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("exception")]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:Object">[exception]</InArgument>
@@ -448,6 +454,11 @@
                     </ui:AssignOperation>
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExceptionHandling.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ExceptionHandling.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
@@ -459,10 +470,10 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,189" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,773" sap2010:WorkflowViewState.IdRef="TryCatch_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -475,10 +486,10 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -486,6 +497,11 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <Sequence DisplayName="System Exception - Downloading Required Files " sap:VirtualizedContainerService.HintSize="513,407" sap2010:WorkflowViewState.IdRef="Sequence_203">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -497,7 +513,7 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("Exception")]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("exception")]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:Object">[exception]</InArgument>
@@ -513,6 +529,11 @@
                     </ui:AssignOperation>
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExceptionHandling.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="ExceptionHandling.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
@@ -524,10 +545,10 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="755,57" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="553,639" sap2010:WorkflowViewState.IdRef="TryCatch_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -539,10 +560,10 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -550,6 +571,11 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <Sequence DisplayName="System Exception - Check Python script version" sap:VirtualizedContainerService.HintSize="513,407" sap2010:WorkflowViewState.IdRef="Sequence_204">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -561,7 +587,7 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("Exception")]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("exception")]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:Object">[exception]</InArgument>
@@ -577,6 +603,11 @@
                     </ui:AssignOperation>
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExceptionHandling.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="ExceptionHandling.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
@@ -588,7 +619,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Converts HTML file to PDF (To be read in OCR Reading sequence)" DisplayName="Convert HTML to PDF" sap:VirtualizedContainerService.HintSize="755,114" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch sap2010:Annotation.AnnotationText="Converts HTML file to PDF (To be read in OCR Reading sequence)" DisplayName="Convert HTML to PDF" sap:VirtualizedContainerService.HintSize="755,141" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -661,10 +692,10 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,114" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,724" sap2010:WorkflowViewState.IdRef="TryCatch_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -679,10 +710,10 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -726,7 +757,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="519,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -837,7 +868,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="542,22" sap2010:WorkflowViewState.IdRef="Catch`1_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -848,7 +879,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Check for Varner invalid article and handle exception" sap:VirtualizedContainerService.HintSize="615,146" sap2010:WorkflowViewState.IdRef="Sequence_221">
+            <Sequence DisplayName="Check for Varner invalid article and handle exception" sap:VirtualizedContainerService.HintSize="615,265" sap2010:WorkflowViewState.IdRef="Sequence_221">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
