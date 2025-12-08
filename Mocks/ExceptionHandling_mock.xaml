@@ -150,7 +150,7 @@
       <AssemblyReference>C982043C0A4_EmailMes.tNOBm3Ow8ZE1UkKEj3Eadc5</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExceptionHandling" sap:VirtualizedContainerService.HintSize="3356,3467" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExceptionHandling" sap:VirtualizedContainerService.HintSize="1834,3471" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uiascb5:EmailMessage_Retrieve" Name="sf_EmailMessage" />
       <Variable x:TypeArguments="x:String" Name="s_CaseID" />
@@ -227,7 +227,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <If Condition="[String.IsNullOrEmpty(SFEventID)]" sap:VirtualizedContainerService.HintSize="620,3141" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[String.IsNullOrEmpty(SFEventID)]" sap:VirtualizedContainerService.HintSize="620,3145" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="586,173" sap2010:WorkflowViewState.IdRef="Sequence_23">
           <sap:WorkflowViewStateService.ViewState>
@@ -239,13 +239,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="586,2807" sap2010:WorkflowViewState.IdRef="Sequence_24">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="586,2811" sap2010:WorkflowViewState.IdRef="Sequence_24">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Salesforce Sequence" sap:VirtualizedContainerService.HintSize="552,2747" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Salesforce Sequence" sap:VirtualizedContainerService.HintSize="552,2751" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <Sequence.Variables>
               <Variable x:TypeArguments="uiascb:EmailMessage_Retrieve" Name="sf_EmailMessageNew" />
             </Sequence.Variables>
@@ -330,7 +330,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </isactr:ConnectorActivity>
-            <Sequence DisplayName="Teams Send Message" sap:VirtualizedContainerService.HintSize="518,639" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Teams Send Message" sap:VirtualizedContainerService.HintSize="518,643" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="uiascb4:listminus_signnormalisedminus_signteams_sub_channels_sub_messages_List[]" Name="list_ChannelMessages" />
               </Sequence.Variables>
@@ -339,7 +339,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <isactr:ConnectorActivity Configuration="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" ConnectionId="52653ce4-d34c-436d-b7b3-f53f7f87cd2a" DisplayName="Send Channel Message - Exception" sap:VirtualizedContainerService.HintSize="416,547" sap2010:WorkflowViewState.IdRef="ConnectorActivity_7" UiPathActivityTypeId="5db80592-ff66-39b4-b0f2-20bc9d93b7e4">
+              <isactr:ConnectorActivity Configuration="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" ConnectionId="52653ce4-d34c-436d-b7b3-f53f7f87cd2a" DisplayName="Send Channel Message - Exception" sap:VirtualizedContainerService.HintSize="416,551" sap2010:WorkflowViewState.IdRef="ConnectorActivity_7" UiPathActivityTypeId="5db80592-ff66-39b4-b0f2-20bc9d93b7e4">
                 <isactr:ConnectorActivity.FieldObjects>
                   <isactr:FieldObject Name="team_id" Type="FieldArgument">
                     <isactr:FieldObject.Value>
@@ -412,7 +412,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:DeleteFileX DisplayName="Delete Temp File" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[CurrentFile.FullName]" />
-                          <ui:LogMessage DisplayName="Log Delete File Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[$&quot;Deleted {CurrentFile.FullName}&quot;]" />
+                          <ui:LogMessage DisplayName="Log Delete File Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Fatal" Message="[$&quot;Deleted {CurrentFile.FullName}&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>

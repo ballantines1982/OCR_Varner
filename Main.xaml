@@ -313,7 +313,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="3356,14612" sap2010:WorkflowViewState.IdRef="Sequence_91">
+  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1834,14670" sap2010:WorkflowViewState.IdRef="Sequence_91">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String,Object)]" Name="dict_ParameterDict" />
       <Variable x:TypeArguments="x:String" Default="[Environment.UserName]" Name="s_User" />
@@ -334,7 +334,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,130" sap2010:WorkflowViewState.IdRef="Sequence_161">
+    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="Sequence_161">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -395,7 +395,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectingSFemailandHTMLBody.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CollectingSFemailandHTMLBody.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectingSFemailandHTMLBody.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CollectingEmailAndHTMLBody.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="x:String" x:Key="s_HtmlFileFullPath">[s_HtmlFileFullPath]</InOutArgument>
               <InArgument x:TypeArguments="x:String" x:Key="s_TempFilePath">[s_TempFilePath]</InArgument>
@@ -470,7 +470,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,773" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,318" sap2010:WorkflowViewState.IdRef="TryCatch_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -479,17 +479,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadingRequiredFiles - Invoke Workflow File (DownloadingRequiredFiles.xaml)" sap:VirtualizedContainerService.HintSize="400,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="DownloadingRequiredFiles.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadingRequiredFiles - Invoke Workflow File (DownloadingRequiredFiles.xaml)" sap:VirtualizedContainerService.HintSize="515,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="DownloadingRequiredFiles.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_ParameterDict">[dict_ParameterDict]</InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

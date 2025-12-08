@@ -1,8 +1,8 @@
 {
   "mockedWorkflows": [
     {
-      "mockFilePath": "Mocks\\CollectingSFemailandHTMLBody_mock.xaml",
-      "sourceWorkflowPath": "CollectingSFemailandHTMLBody.xaml"
+      "mockFilePath": "Mocks\\CollectingEmailAndHTMLBody_mock.xaml",
+      "sourceWorkflowPath": "CollectingEmailAndHTMLBody.xaml"
     },
     {
       "mockFilePath": "Mocks\\ExceptionHandling_mock.xaml",

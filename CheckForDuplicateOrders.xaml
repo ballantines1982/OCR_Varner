@@ -218,7 +218,7 @@
       <AssemblyReference>DataService.Svevia_OCR</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1059,2617" sap2010:WorkflowViewState.IdRef="Sequence_219">
+  <Sequence sap:VirtualizedContainerService.HintSize="1094,2617" sap2010:WorkflowViewState.IdRef="Sequence_219">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_QuerySuccessful" />
       <Variable x:TypeArguments="scg:IList(s:SWEOCROrderPurchaseNumber)" Name="lst_EntityRecords" />
@@ -238,7 +238,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uda:QueryEntityRecords x:TypeArguments="s:SWEOCROrderPurchaseNumber" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="b23dfa56-093a-f011-a5f1-0022489e662b" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="382,163" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[lst_EntityRecords]" QueriedEntityId="b23dfa56-093a-f011-a5f1-0022489e662b" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+            <uda:QueryEntityRecords x:TypeArguments="s:SWEOCROrderPurchaseNumber" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="b23dfa56-093a-f011-a5f1-0022489e662b" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="382,163" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[lst_EntityRecords]" QueriedEntityId="b23dfa56-093a-f011-a5f1-0022489e662b" Skip="0" SortAscending="False" SortByField="CreateTime" TimeoutInMs="30000" Top="5000">
               <uda:QueryEntityRecords.FilterArguments>
                 <uda:FilterArgument FilterActivityType="{x:Null}">
                   <uda:FilterArgument.Filter>
