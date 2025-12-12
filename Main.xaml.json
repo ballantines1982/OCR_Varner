@@ -1,22 +1,10 @@
-{
+﻿{
   "DisplayName": "Main",
   "Tooltip": null,
   "HelpLink": null,
   "Color": null,
   "OriginalIconFileName": null,
   "Arguments": [
-    {
-      "Name": "UiPathEventObjectId",
-      "DisplayName": "UiPathEventObjectId",
-      "Category": null,
-      "Tooltip": null,
-      "Placeholder": null,
-      "Widget": "TextComposer",
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
-    },
     {
       "Name": "in_TestEventID",
       "DisplayName": "in_TestEventID",

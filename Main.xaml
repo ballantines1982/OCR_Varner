@@ -313,7 +313,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1834,14670" sap2010:WorkflowViewState.IdRef="Sequence_91">
+  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1094,12779" sap2010:WorkflowViewState.IdRef="Sequence_91">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String,Object)]" Name="dict_ParameterDict" />
       <Variable x:TypeArguments="x:String" Default="[Environment.UserName]" Name="s_User" />
@@ -334,7 +334,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="Sequence_161">
+    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,130" sap2010:WorkflowViewState.IdRef="Sequence_161">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -379,10 +379,10 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,713" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,156" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -411,10 +411,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -470,23 +470,23 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,318" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,216" sap2010:WorkflowViewState.IdRef="TryCatch_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadingRequiredFiles - Invoke Workflow File (DownloadingRequiredFiles.xaml)" sap:VirtualizedContainerService.HintSize="515,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="DownloadingRequiredFiles.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadingRequiredFiles - Invoke Workflow File (DownloadingRequiredFiles.xaml)" sap:VirtualizedContainerService.HintSize="400,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="DownloadingRequiredFiles.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_ParameterDict">[dict_ParameterDict]</InOutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -545,10 +545,10 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="553,639" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="755,84" sap2010:WorkflowViewState.IdRef="TryCatch_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -560,10 +560,10 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -692,16 +692,16 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,724" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,141" sap2010:WorkflowViewState.IdRef="TryCatch_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OCRReading - Invoke Workflow File (OCRReading.xaml)" sap:VirtualizedContainerService.HintSize="400,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="OCRReading.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OCRReading - Invoke Workflow File (OCRReading.xaml)" sap:VirtualizedContainerService.HintSize="515,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="OCRReading.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="s_PdfFileFullPath">[s_PdfFileFullPath]</InArgument>
             <OutArgument x:TypeArguments="sd:DataSet" x:Key="ds_Result">[ds_Result]</OutArgument>
@@ -710,10 +710,10 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="519,477" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -757,7 +757,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="519,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -814,7 +814,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="This sequence loads a list of invalid Varner article numbers from Excel and validates the articles found in ds_Result.Tables(2).&#xA;For product 275827, special handling is applied: the quantity is multiplied by 5 and the article is skipped from the invalid-check.&#xA;All other product codes are checked against the invalid-list, and if any match is found, a BusinessRuleException is thrown with details.&#xA;Exceptions are routed to the appropriate handling workflows (business vs system)." DisplayName="Check for invalid articles (Varner unique)" sap:VirtualizedContainerService.HintSize="755,1133" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+    <TryCatch sap2010:Annotation.AnnotationText="This sequence loads a list of invalid Varner article numbers from Excel and validates the articles found in ds_Result.Tables(2).&#xA;For product 275827, special handling is applied: the quantity is multiplied by 5 and the article is skipped from the invalid-check.&#xA;All other product codes are checked against the invalid-list, and if any match is found, a BusinessRuleException is thrown with details.&#xA;Exceptions are routed to the appropriate handling workflows (business vs system)." DisplayName="Check for invalid articles (Varner unique)" sap:VirtualizedContainerService.HintSize="755,997" sap2010:WorkflowViewState.IdRef="TryCatch_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -823,7 +823,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Read and validate data from Excel" sap:VirtualizedContainerService.HintSize="538,756" sap2010:WorkflowViewState.IdRef="Sequence_213">
+        <Sequence DisplayName="Read and validate data from Excel" sap:VirtualizedContainerService.HintSize="484,620" sap2010:WorkflowViewState.IdRef="Sequence_213">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_VarnerInvalid" />
           </Sequence.Variables>
@@ -832,34 +832,57 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CommentOut DisplayName="Comments out a test sequence." sap:VirtualizedContainerService.HintSize="504,276" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+          <Sequence DisplayName="Read data from Excel and delete the file" sap:VirtualizedContainerService.HintSize="450,315" sap2010:WorkflowViewState.IdRef="Sequence_234">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_VarnerInvalid]" DisplayName="Read data from Excel" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="invalid" WorkbookPath="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
+            <ui:DeleteFileX DisplayName="Delete the varner_invalid_materials.xlsx file" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_8" Path="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
+          </Sequence>
+          <ui:CommentOut DisplayName="Comment out debug activities." sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_224">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_233">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="TEST" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_64">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Object">[ds_Result.Tables(2).Rows(0)("Product Code")]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Object">["6800202"]</InArgument>
-                  </Assign.Value>
-                </Assign>
+                <Sequence DisplayName="DEBUG" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_230">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:BuildDataTable DataTable="[dt_VarnerInvalid]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Article_Number&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Article_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ZSE_Värde&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Article_Number&gt;6800202&lt;/Article_Number&gt;&#xD;&#xA;    &lt;Article_Name&gt;Havredryck OATLY ikaffe 1L&lt;/Article_Name&gt;&#xD;&#xA;    &lt;ZSE_Värde&gt;6&lt;/ZSE_Värde&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim ds As New DataSet()&#xD;&#xA;&#xD;&#xA;' Dummy tables to get index 2&#xD;&#xA;ds.Tables.Add(New DataTable(&quot;Dummy1&quot;))&#xD;&#xA;ds.Tables.Add(New DataTable(&quot;Dummy2&quot;))&#xD;&#xA;&#xD;&#xA;' Create the actual table used in your logic&#xD;&#xA;Dim dtValid As New DataTable(&quot;ValidTable&quot;)&#xD;&#xA;dtValid.Columns.Add(&quot;Product Code&quot;, GetType(String))&#xD;&#xA;dtValid.Columns.Add(&quot;Quantity&quot;, GetType(Double))&#xD;&#xA;&#xD;&#xA;' Add sample articles&#xD;&#xA;dtValid.Rows.Add(&quot;6800202&quot;, 1)     ' Example of invalid if exists in dt_VarnerInvalid&#xD;&#xA;dtValid.Rows.Add(&quot;275827&quot;, 2)      ' Special logic article (multiplicera med 5)&#xD;&#xA;dtValid.Rows.Add(&quot;123456&quot;, 3)      ' Valid article&#xD;&#xA;&#xD;&#xA;ds.Tables.Add(dtValid)&#xD;&#xA;&#xD;&#xA;ds_Result = ds" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
+                    <ui:InvokeCode.Arguments>
+                      <OutArgument x:TypeArguments="sd:DataSet" x:Key="ds_Result">
+                        <VisualBasicReference x:TypeArguments="sd:DataSet" ExpressionText="ds_Result" />
+                      </OutArgument>
+                    </ui:InvokeCode.Arguments>
+                  </ui:InvokeCode>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_65">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataSet">[ds_Result]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataSet">[Nothing]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
               </Sequence>
             </ui:CommentOut.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_VarnerInvalid]" DisplayName="Read data from Excel" sap:VirtualizedContainerService.HintSize="504,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="invalid" WorkbookPath="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
-          <ui:DeleteFileX DisplayName="Delete the varner_invalid_materials.xlsx file" sap:VirtualizedContainerService.HintSize="504,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_8" Path="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Inputs:&#xA;'   ds_Result As DataSet&#xA;'   dt_VarnerInvalid As DataTable&#xA;&#xA;If ds_Result Is Nothing OrElse ds_Result.Tables.Count &lt;= 2 Then&#xA;    Throw New System.Exception(&quot;BIZ_DATASET_MISSING|Dataset saknar tabell på index 2.&quot;)&#xA;End If&#xA;&#xA;If dt_VarnerInvalid Is Nothing Then&#xA;    Throw New UiPath.Core.BusinessRuleException(&quot;BIZ_VARNER_MATERIALS|dt_VarnerInvalid är tomt eller Nothing.&quot;)&#xA;End If&#xA;&#xA;Dim invalidArticles As New List(Of String)&#xA;Dim validTable As DataTable = ds_Result.Tables(2)&#xA;&#xA;For Each row As DataRow In validTable.Rows&#xA;&#xA;    Dim productCode As String = row(&quot;Product Code&quot;).ToString.Trim()&#xA;&#xA;    ' ⭐ SPECIALLOGIK FÖR ARTIKEL 275827 ⭐&#xA;    If productCode = &quot;275827&quot; Then&#xA;        &#xA;        Dim originalQty As Double = 0&#xA;        Double.TryParse(row(&quot;Quantity&quot;).ToString(), originalQty)&#xA;&#xA;        ' Multiplicera antal med 5&#xA;        row(&quot;Quantity&quot;) = originalQty * 5&#xA;&#xA;        ' Hoppa över invalid-kontrollen &amp; fortsätt&#xA;        Continue For&#xA;    End If&#xA;    ' ⭐ END SPECIALLOGIK ⭐&#xA;&#xA;    ' Ordinarie invalid-kontroll&#xA;    Dim found() As DataRow = dt_VarnerInvalid.Select(&quot;Article_Number = '&quot; &amp; productCode.Replace(&quot;'&quot;, &quot;''&quot;) &amp; &quot;'&quot;)&#xA;    If found.Length &gt; 0 Then&#xA;        invalidArticles.Add(productCode)&#xA;    End If&#xA;&#xA;Next&#xA;&#xA;If invalidArticles.Count &gt; 0 Then&#xA;    Throw New System.Exception(&#xA;        &quot;BIZ_INVALID|Följande produkter finns i listan över ogiltiga artiklar: &quot; &amp; String.Join(&quot;, &quot;, invalidArticles)&#xA;    )&#xA;End If&#xA;" DisplayName="Validate dataset and datatable" sap:VirtualizedContainerService.HintSize="504,188" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Inputs:&#xD;&#xA;'   ds_Result As DataSet&#xD;&#xA;'   dt_VarnerInvalid As DataTable&#xD;&#xA;&#xD;&#xA;If ds_Result Is Nothing OrElse ds_Result.Tables.Count &lt;= 2 Then&#xD;&#xA;    Throw New System.Exception(&quot;SYS_VARNER_MATERIALS| Dataset saknar tabell på index 2.&quot;)&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;If dt_VarnerInvalid Is Nothing Then&#xD;&#xA;    Throw New System.Exception(&quot;SYS_VARNER_MATERIALS| dt_VarnerInvalid är tomt eller Nothing.&quot;)&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;Dim invalidArticles As New List(Of String)&#xD;&#xA;Dim validTable As DataTable = ds_Result.Tables(2)&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In validTable.Rows&#xD;&#xA;&#xD;&#xA;    Dim productCode As String = row(&quot;Product Code&quot;).ToString.Trim()&#xD;&#xA;&#xD;&#xA;    ' ⭐ SPECIALLOGIK FÖR ARTIKEL 275827 ⭐&#xD;&#xA;    If productCode = &quot;275827&quot; Then&#xD;&#xA;        &#xD;&#xA;        Dim originalQty As Double = 0&#xD;&#xA;        Double.TryParse(row(&quot;Quantity&quot;).ToString(), originalQty)&#xD;&#xA;&#xD;&#xA;        ' Multiplicera antal med 5&#xD;&#xA;        row(&quot;Quantity&quot;) = originalQty * 5&#xD;&#xA;&#xD;&#xA;        ' Hoppa över invalid-kontrollen &amp; fortsätt&#xD;&#xA;        Continue For&#xD;&#xA;    End If&#xD;&#xA;    ' ⭐ END SPECIALLOGIK ⭐&#xD;&#xA;&#xD;&#xA;    ' Ordinarie invalid-kontroll&#xD;&#xA;    Dim found() As DataRow = dt_VarnerInvalid.Select(&quot;Article_Number = '&quot; &amp; productCode.Replace(&quot;'&quot;, &quot;''&quot;) &amp; &quot;'&quot;)&#xD;&#xA;    If found.Length &gt; 0 Then&#xD;&#xA;        invalidArticles.Add(productCode)&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;If invalidArticles.Count &gt; 0 Then&#xD;&#xA;    Throw New UiPath.Core.BusinessRuleException(&#xD;&#xA;        &quot;BIZ_INVALID|Följande produkter finns i listan över ogiltiga artiklar: &quot; &amp; String.Join(&quot;, &quot;, invalidArticles)&#xD;&#xA;    )&#xD;&#xA;End If&#xD;&#xA;" DisplayName="Validate dataset and datatable" sap:VirtualizedContainerService.HintSize="450,188" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
             <ui:InvokeCode.Arguments>
               <InArgument x:TypeArguments="sd:DataSet" x:Key="ds_Result">[ds_Result]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_VarnerInvalid">[dt_VarnerInvalid]</InArgument>
@@ -868,7 +891,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="542,22" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,22" sap2010:WorkflowViewState.IdRef="Catch`1_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -879,43 +902,35 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Check for Varner invalid article and handle exception" sap:VirtualizedContainerService.HintSize="615,265" sap2010:WorkflowViewState.IdRef="Sequence_221">
+            <Sequence DisplayName="Check for Varner invalid article and handle exception" sap:VirtualizedContainerService.HintSize="615,1118" sap2010:WorkflowViewState.IdRef="Sequence_221">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[exception.Message.StartsWith(&quot;BIZ_&quot;)]" sap:VirtualizedContainerService.HintSize="382,205" sap2010:WorkflowViewState.IdRef="If_36">
+              <If Condition="[(exception.InnerException IsNot Nothing AndAlso exception.InnerException.Message.StartsWith(&quot;BIZ_&quot;)) _&#xD;&#xA;OrElse exception.Message.StartsWith(&quot;BIZ_&quot;)]" sap:VirtualizedContainerService.HintSize="581,1058" sap2010:WorkflowViewState.IdRef="If_36">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,521" sap2010:WorkflowViewState.IdRef="Sequence_227">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,490" sap2010:WorkflowViewState.IdRef="Sequence_227">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Handle Varner business rule exception" sap:VirtualizedContainerService.HintSize="513,461" sap2010:WorkflowViewState.IdRef="Sequence_228">
+                    <Sequence DisplayName="Handle Varner business rule exception" sap:VirtualizedContainerService.HintSize="513,430" sap2010:WorkflowViewState.IdRef="Sequence_228">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign DisplayName="Assign Varner Exception Details" sap:VirtualizedContainerService.HintSize="479,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_26">
+                      <ui:MultipleAssign DisplayName="Assign Varner Exception Details" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_26">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_64">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[s_BizException]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">Varner invalid article detected</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_65">
                               <ui:AssignOperation.To>
                                 <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("exception")]</OutArgument>
                               </ui:AssignOperation.To>
                               <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="ui:BusinessRuleException">[New BusinessRuleException(s_BizException)]</InArgument>
+                                <InArgument x:TypeArguments="x:Object">[New BusinessRuleException(exception.Message)]</InArgument>
                               </ui:AssignOperation.Value>
                             </ui:AssignOperation>
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_66">
@@ -958,7 +973,7 @@
                               <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("StepName")]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Object">["Varner invald article check (sys)"]</InArgument>
+                              <InArgument x:TypeArguments="x:Object">["System error in Varner flow (Check for invalid materials)"]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
@@ -966,7 +981,7 @@
                               <OutArgument x:TypeArguments="x:Object">[dict_ParameterDict("exception")]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Object">[New System.Exception("Varner invald article detected")]</InArgument>
+                              <InArgument x:TypeArguments="x:Object">[New System.Exception(exception.Message)]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                         </scg:List>
