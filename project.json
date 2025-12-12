@@ -1,5 +1,5 @@
 {
-  "name": "Varner_OCR",
+  "name": "Varner_OCR_State",
   "projectId": "3c5fedb1-1c7a-42fc-b054-fda74e63477b",
   "description": "Varner OCR reading",
   "main": "Main_State.xaml",
