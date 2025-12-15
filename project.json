@@ -2,7 +2,7 @@
   "name": "Varner_OCR",
   "projectId": "3c5fedb1-1c7a-42fc-b054-fda74e63477b",
   "description": "Varner OCR reading",
-  "main": "Main_State.xaml",
+  "main": "Main.xaml",
   "dependencies": {
     "psvaerd_lib": "[1.0.3]",
     "UiPath.DataService.Activities": "[25.2.0]",
@@ -71,8 +71,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main_State.xaml",
-      "uniqueId": "425a0c80-7ed4-4b25-abbe-af97f8eea593",
+      "filePath": "Main.xaml",
+      "uniqueId": "fdcc52de-ea78-419f-a07a-23facacf5242",
       "input": [],
       "output": []
     }
