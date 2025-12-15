@@ -154,7 +154,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BusinessException" sap:VirtualizedContainerService.HintSize="1094,1621" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BusinessException" sap:VirtualizedContainerService.HintSize="1095,1621" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uiascb5:EmailMessage_Retrieve" Name="sf_EmailMessage" />
       <Variable x:TypeArguments="x:String" Name="s_CaseID" />
@@ -187,7 +187,7 @@
               <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="ui:BusinessRuleException">[CType(dict_ParameterDict("exception"), BusinessRuleException)]</InArgument>
+              <InArgument x:TypeArguments="ui:BusinessRuleException">[CType(dict_ParameterDict("exception"), UiPath.Core.BusinessRuleException)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">

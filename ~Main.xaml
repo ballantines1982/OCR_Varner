@@ -304,6 +304,7 @@
       <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
       <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -313,7 +314,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1095,9663" sap2010:WorkflowViewState.IdRef="Sequence_91">
+  <Sequence sap2010:Annotation.AnnotationText="Main purpose:&#xA;Collect new Varner cases directly from Salesforce and converts the  purchase order to a PDFcreate a SAP order.&#xA;This involves UiPath Document Understandning / AI Center and Swedens Intergration Tool 'BLUE'&#xA;&#xA;1. Collects new Svevia cases from Salesforce using Integration Service trigger.&#xA;2. Converts the  purchase order from HTML to PDF.&#xA;3. OCR Reads the PDF using UiPath Document Understand / Ai Center&#xA;4. Converts the OCR data to a XML file&#xA;5. Uploads the XML file to Blue&#xA;6. Updates Salesforce Case accordingly.&#xA;" DisplayName="Varner Outer Main" sap:VirtualizedContainerService.HintSize="1095,9882" sap2010:WorkflowViewState.IdRef="Sequence_91">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String,Object)]" Name="dict_ParameterDict" />
       <Variable x:TypeArguments="x:String" Default="[Environment.UserName]" Name="s_User" />
@@ -334,7 +335,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="Sequence_161">
+    <Sequence sap2010:Annotation.AnnotationText="Pre kills applications, sets variables." DisplayName="Kill MS Word, assign User and EventID" sap:VirtualizedContainerService.HintSize="755,130" sap2010:WorkflowViewState.IdRef="Sequence_161">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -379,7 +380,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,129" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Collecting SF case and extracts, saves HTML body from customers email. Updates Status and Prio." DisplayName="Collecting SF email and HTML Body" sap:VirtualizedContainerService.HintSize="755,156" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -470,7 +471,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,189" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+    <TryCatch sap2010:Annotation.AnnotationText="Downloads 4 required files from Sharepoint&#xA;&#xA;- log_validation.csv&#xA;- invalid_entries.xlsx&#xA;- Customer_Data.xlsx&#xA;- varner_materials.xlsx (Varner unique)" DisplayName="Downloading Required Files " sap:VirtualizedContainerService.HintSize="755,216" sap2010:WorkflowViewState.IdRef="TryCatch_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -545,7 +546,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="755,57" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+    <TryCatch DisplayName="Check Python script version" sap:VirtualizedContainerService.HintSize="755,84" sap2010:WorkflowViewState.IdRef="TryCatch_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -619,7 +620,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Converts HTML file to PDF (To be read in OCR Reading sequence)" DisplayName="Convert HTML to PDF" sap:VirtualizedContainerService.HintSize="755,114" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch sap2010:Annotation.AnnotationText="Converts HTML file to PDF (To be read in OCR Reading sequence)" DisplayName="Convert HTML to PDF" sap:VirtualizedContainerService.HintSize="755,141" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -692,7 +693,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,114" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+    <TryCatch sap2010:Annotation.AnnotationText="Reading Excel file using Uipath AI Center, ML model SWE_Purchase_Order" DisplayName="OCR reading" sap:VirtualizedContainerService.HintSize="755,141" sap2010:WorkflowViewState.IdRef="TryCatch_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -826,7 +827,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Read and validate data from Excel" sap:VirtualizedContainerService.HintSize="484,620" sap2010:WorkflowViewState.IdRef="Sequence_213">
+        <Sequence DisplayName="Read and validate data from Excel" sap:VirtualizedContainerService.HintSize="484,647" sap2010:WorkflowViewState.IdRef="Sequence_213">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_VarnerInvalid" />
           </Sequence.Variables>
@@ -844,7 +845,7 @@
             <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_VarnerInvalid]" DisplayName="Read data from Excel" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="invalid" WorkbookPath="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
             <ui:DeleteFileX DisplayName="Delete the varner_invalid_materials.xlsx file" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_8" Path="[&quot;C:\Users\&quot; &amp; dict_ParameterDict(&quot;User&quot;).ToString &amp; &quot;\Downloads\SWE_OCR\Temp_Files\varner_invalid_materials.xlsx&quot;]" />
           </Sequence>
-          <ui:CommentOut DisplayName="Comment out debug activities." sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+          <ui:CommentOut DisplayName="Comment out debug activities." sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="CommentOut_2">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_233">
                 <sap:WorkflowViewStateService.ViewState>
@@ -919,7 +920,7 @@
                   </OutArgument>
                 </ui:InvokeCode.Arguments>
               </ui:InvokeCode>
-              <If Condition="[s_ExceptionMessage.StartsWith(&quot;BIZ_&quot;)]" sap:VirtualizedContainerService.HintSize="581,1058" sap2010:WorkflowViewState.IdRef="If_36">
+              <If Condition="[s_ExceptionMessage.StartsWith(&quot;BIZ_&quot;)]" DisplayName="Handle exceptions in Varner OCR process" sap:VirtualizedContainerService.HintSize="581,1058" sap2010:WorkflowViewState.IdRef="If_36">
                 <If.Then>
                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="547,490" sap2010:WorkflowViewState.IdRef="Sequence_227">
                     <sap:WorkflowViewStateService.ViewState>
@@ -1220,7 +1221,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Sequence sap2010:Annotation.AnnotationText="Using ML model 'jester6136/multilingual-e5-large-instruct-m2v' to match the shipment address  provided by the customer against SAP customer data to get the SAP customer number.&#xA;If match is above score threshold, the script creates a XML file.&#xA;If match is below score threshold, an email is sent with the five best matches to Sweden Customer Service to be validated manually.&#xA;&#xA;BizExceptions: &#xA;- Missing required order line: Product Code&#xA;- Missing required order line: Quantity&#xA;- Bad OCR reading of customer email, 'Client Adress'&#xA;- Did not load invalid entries&#xA;- Invalid customer numbers {invalid_customer_list} found, Process halted&#xA;- Invalid product codes {invalid_product_list} found, Process halted&#xA;- No GLN found in 'Billing Address' column, Process halted&#xA;- No payer rows '0003' found in Customer_Data.xlsx, Process halted&#xA;- No digits found in GLN value: {gln_value_raw}, Process halted&#xA;- No relevant rows found in Customer_Data.xlsx with 'BILL-TO' matching Customer number: {relevant_customer}, Process halted&#xA;- ZBA2_PARTNER is missing for customer {customer_number}, Process halted&#xA;- Threshold not met for address: {addr}. Best score: {score}&#xA;&#xA;System Exceptions: &#xA;Various, ex required files missing ect." DisplayName="Run Python script as .exe" sap:VirtualizedContainerService.HintSize="755,444" sap2010:WorkflowViewState.IdRef="Sequence_107">
+    <Sequence sap2010:Annotation.AnnotationText="Using ML model 'jester6136/multilingual-e5-large-instruct-m2v' to match the shipment address  provided by the customer against SAP customer data to get the SAP customer number.&#xA;If match is above score threshold, the script creates a XML file.&#xA;If match is below score threshold, an email is sent with the five best matches to Sweden Customer Service to be validated manually.&#xA;&#xA;BizExceptions: &#xA;- Missing required order line: Product Code&#xA;- Missing required order line: Quantity&#xA;- Bad OCR reading of customer email, 'Client Adress'&#xA;- Did not load invalid entries&#xA;- Invalid customer numbers {invalid_customer_list} found, Process halted&#xA;- Invalid product codes {invalid_product_list} found, Process halted&#xA;- No GLN found in 'Billing Address' column, Process halted&#xA;- No payer rows '0003' found in Customer_Data.xlsx, Process halted&#xA;- No digits found in GLN value: {gln_value_raw}, Process halted&#xA;- No relevant rows found in Customer_Data.xlsx with 'BILL-TO' matching Customer number: {relevant_customer}, Process halted&#xA;- ZBA2_PARTNER is missing for customer {customer_number}, Process halted&#xA;- Threshold not met for address: {addr}. Best score: {score}&#xA;&#xA;System Exceptions: &#xA;Various, ex required files missing ect." DisplayName="Run Python script as .exe" sap:VirtualizedContainerService.HintSize="755,486" sap2010:WorkflowViewState.IdRef="Sequence_107">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="bool_ContainsThreshold" />
         <Variable x:TypeArguments="x:Boolean" Name="bool_ContainsBizException" />
